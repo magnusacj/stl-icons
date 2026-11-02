@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
      data-title="OSS/BSS"
      data-tags="oss, bss, oss/bss, operations support, business support, billing, it stack">
-  <rect x="2" y="3" width="20" height="8" rx="1.5"/><rect x="2" y="13" width="20" height="8" rx="1.5"/><circle cx="6.5" cy="7" r="1.6"/><circle cx="6.5" cy="7" r="0.64"/><path d="M8.1 7L9.4 7M7.63 8.13L8.55 9.05M6.5 8.6L6.5 9.9M5.37 8.13L4.45 9.05M4.9 7L3.6 7M5.37 5.87L4.45 4.95M6.5 5.4L6.5 4.1M7.63 5.87L8.55 4.95"/><path d="M11 6h8M11 8.5h5M7.5 15.3v3.4M6 16h2.25a.9.9 0 0 1 0 1.8H6M11 16h8M11 18.5h5"/>
+  <circle cx="5.75" cy="6.5" r="2.4"/><circle cx="5.75" cy="6.5" r="0.6" fill="currentColor" stroke="none"/><path d="M8.15 6.5L9.45 6.5M6.95 8.58L7.6 9.7M4.55 8.58L3.9 9.7M3.35 6.5L2.05 6.5M4.55 4.42L3.9 3.3M6.95 4.42L7.6 3.3"/><circle cx="5.75" cy="17.5" r="3.4"/><path d="M5.75 16.31v2.38"/><path d="M12 5h9M12 8h6M12 16h9M12 19h6"/>
 </svg>

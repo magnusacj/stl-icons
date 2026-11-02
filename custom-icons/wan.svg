@@ -2,8 +2,7 @@
      data-title="Wide area network (WAN)"
      data-tags="wan, wide area network, sd-wan, enterprise network, branch, sites, connectivity, mpls">
   <circle cx="12" cy="10" r="5"/>
-  <path d="M7 10h10M12 5a2.5 5 0 0 0 0 10a2.5 5 0 0 0 0-10"/>
-  <rect x="1.5" y="17.5" width="5" height="4" rx=".75"/>
-  <rect x="17.5" y="17.5" width="5" height="4" rx=".75"/>
-  <path d="M4 17.5l4.5-4M20 17.5l-4.5-4"/>
+  <path d="M7 10h10M12 5a2 5 0 0 0 0 10a2 5 0 0 0 0-10"/>
+  <rect x="2" y="17.5" width="5" height="4" rx=".75"/><rect x="17" y="17.5" width="5" height="4" rx=".75"/>
+  <path d="M4.5 17.5L8.46 13.54M19.5 17.5L15.54 13.54"/>
 </svg>

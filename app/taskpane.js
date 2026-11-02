@@ -596,6 +596,33 @@ function isRecolourable(value) {
     return !(v === 'none' || v === 'transparent' || v.startsWith('url(') || v === '#fff' || v === '#ffffff' || v === 'white');
 }
 
+const SHAPE_TAGS = ['path', 'rect', 'circle', 'ellipse', 'line', 'polyline', 'polygon'];
+
+function paintValue(el, prop) {
+    const style = el.getAttribute('style') || '';
+    const m = style.match(new RegExp(`(?:^|;)\\s*${prop}\\s*:\\s*([^;]+)`));
+    return m ? m[1].trim() : el.getAttribute(prop);
+}
+
+/**
+ * Drop shapes with neither fill nor stroke, such as Tabler's 24x24 frame path. They are invisible on
+ * screen, but PowerPoint's Graphics Outline strokes every shape, which turns them into a visible box.
+ */
+function removeInvisibleShapes(root) {
+    const walk = (el, fill, stroke) => {
+        fill = paintValue(el, 'fill') ?? fill;
+        stroke = paintValue(el, 'stroke') ?? stroke;
+        const isNone = v => v === 'none' || v === 'transparent';
+        if (SHAPE_TAGS.includes(el.localName) && isNone(fill) && (stroke == null || isNone(stroke))) {
+            el.remove();
+            return;
+        }
+        Array.from(el.children).forEach(child => walk(child, fill, stroke));
+    };
+    // SVG defaults: fill black, stroke none
+    walk(root, 'black', null);
+}
+
 /** Returns { viewBox, attrs, inner } with colours applied. */
 function iconParts(entry, color) {
     const icon = getIcon(entry);
@@ -622,6 +649,8 @@ function iconParts(entry, color) {
     PRESENTATION_ATTRS.forEach(a => {
         if (root.hasAttribute(a)) attrs[a] = root.getAttribute(a);
     });
+
+    removeInvisibleShapes(root);
 
     if (!MULTI_COLOR_LIBS.includes(entry.lib)) {
         // SVG fills default to black, so an unset root fill means 'icon colour'

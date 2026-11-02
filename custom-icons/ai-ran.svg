@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
      data-title="AI-RAN"
      data-tags="ai-ran, ai ran, ai in the radio network, gpu ran, ai native ran, radio ai">
-  <circle cx="7" cy="5" r="1"/><path d="M7 6L3 20M7 6L11 20M2 20h10"/><path d="M5.18 3.18a2.6 2.6 0 0 0 0 3.64M8.82 3.18a2.6 2.6 0 0 1 0 3.64"/><rect x="15" y="13" width="6" height="6" rx="1.2"/><path d="M17 13v-1.5M17 19v1.5M15 15h-1.5M21 15h1.5M19 13v-1.5M19 19v1.5M15 17h-1.5M21 17h1.5"/><rect x="16.8" y="14.8" width="2.4" height="2.4" rx="0.4"/>
+  <circle cx="7" cy="5" r="1"/><path d="M7 6L3 20M7 6L11 20M2.5 20h9"/><path d="M4.38 3.16a3.2 3.2 0 0 0 0 3.67M9.62 3.16a3.2 3.2 0 0 1 0 3.67"/><rect x="14" y="13" width="6.5" height="6.5" rx="1.2"/><path d="M16.17 13v-1.5M16.17 19.5v1.5M14 15.17h-1.5M20.5 15.17h1.5M18.33 13v-1.5M18.33 19.5v1.5M14 17.33h-1.5M20.5 17.33h1.5"/>
 </svg>

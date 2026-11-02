@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
      data-title="AI inference"
      data-tags="ai inference, inferencing, inference at the edge, serving, ai workload, tokens">
-  <rect x="3" y="7" width="10" height="10" rx="1.2"/><path d="M6.33 7v-1.5M6.33 17v1.5M3 10.33h-1.5M13 10.33h1.5M9.67 7v-1.5M9.67 17v1.5M3 13.67h-1.5M13 13.67h1.5"/><rect x="6" y="10" width="4" height="4" rx="0.4"/><path d="M16 12h5.5M19 9.5l2.5 2.5-2.5 2.5"/>
+  <rect x="4" y="7" width="10" height="10" rx="1.2"/><path d="M7.33 7v-1.5M7.33 17v1.5M4 10.33h-1.5M14 10.33h1.5M10.67 7v-1.5M10.67 17v1.5M4 13.67h-1.5M14 13.67h1.5"/><rect x="7" y="10" width="4" height="4" rx="0.4"/><path d="M17 12h4.5M19 9.5l2.5 2.5-2.5 2.5"/>
 </svg>

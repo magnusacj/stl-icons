@@ -3,7 +3,7 @@
      data-tags="operator, telco, mno, mobile network operator, carrier, csp, communications service provider, isp">
   <rect x="5" y="10" width="10" height="11"/>
   <rect x="15" y="14" width="4.5" height="7"/>
-  <path d="M8 13.5h1M11 13.5h1M8 17h1M11 17h1M3 21h18M10 10V5.5"/>
+  <path d="M7.75 13.5h1M11.25 13.5h1M7.75 17h1M11.25 17h1M3 21h18M10 10V5.5"/>
   <circle cx="10" cy="4.5" r="1"/>
-  <path d="M7.5 2.7a3 3 0 0 0 0 3.6M12.5 2.7a3 3 0 0 1 0 3.6"/>
+  <path d="M7.38 2.66a3.2 3.2 0 0 0 0 3.68M12.62 2.66a3.2 3.2 0 0 1 0 3.68"/>
 </svg>

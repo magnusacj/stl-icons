@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
      data-title="Transport network"
      data-tags="transport, ip transport, optical transport, mpls, routing, core transport">
-  <rect x="2" y="9" width="6" height="6" rx="1.5"/><rect x="16" y="9" width="6" height="6" rx="1.5"/><path d="M8 12h8M3.8 12h2.4M5 10.8v2.4M17.2 12h2.4M18.4 10.8v2.4"/><path d="M10.5 10l1.5 2-1.5 2M13 10l1.5 2-1.5 2"/>
+  <rect x="2" y="8.5" width="7" height="7" rx="1.5"/><rect x="15" y="8.5" width="7" height="7" rx="1.5"/><path d="M9 12h6M4.3 12h2.4M5.5 10.8v2.4M17.3 12h2.4M18.5 10.8v2.4"/><path d="M11.25 10l1.5 2-1.5 2"/>
 </svg>

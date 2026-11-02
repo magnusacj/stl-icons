@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
      data-title="Backup power (UPS)"
      data-tags="ups, backup power, battery, uninterruptible power, generator, resilience">
-  <rect x="3" y="6" width="15" height="12" rx="1.5"/><path d="M18 10h2.5v4H18"/><path d="M11.5 8.5L8.5 12.5h3.5l-3 3.5"/>
+  <rect x="3" y="6" width="15" height="12" rx="1.5"/><path d="M18 10h2.5v4H18"/><path d="M11.5 8.75L9 12h3.5L10 15.5"/>
 </svg>

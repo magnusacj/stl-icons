@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
      data-title="Mining"
      data-tags="mining, resources, heavy industry, remote site, private network, mine">
-  <path d="M3 11h18l-2.5 7h-13z"/><circle cx="7.5" cy="19.8" r="1.5"/><circle cx="16.5" cy="19.8" r="1.5"/><path d="M6 6.5c3.5-3 8.5-3 12 0M12 4.2V9"/>
+  <path d="M3 11h18l-2.5 7h-13z"/><circle cx="7.5" cy="19.8" r="1.5"/><circle cx="16.5" cy="19.8" r="1.5"/><path d="M6 6.5c3.5-3 8.5-3 12 0M12 4.2v4.3"/>
 </svg>

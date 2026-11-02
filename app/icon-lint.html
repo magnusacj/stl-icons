@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<title>STL icon lint</title>
+<style>
+  body { font: 13px 'Segoe UI', sans-serif; margin: 16px; color: #282f4c; }
+  .row { display: flex; gap: 12px; align-items: center; border-bottom: 1px solid #eee; padding: 6px 0; }
+  .row svg { width: 72px; height: 72px; background: #fafafa; border: 1px solid #ddd; }
+  .ok { color: #00a862; } .bad { color: #e2051c; }
+  code { font-size: 11px; color: #5e6378; }
+</style>
+</head>
+<body>
+<h1>STL icon lint</h1>
+<p>Checks every icon in <code>manifests/stl.json</code> against the style guide (see <code>ICON-STYLE-GUIDE.md</code>):
+near-miss strokes (closer than 1px without joining), doubled strokes, and geometry outside the safe area.</p>
+<div id="summary">Running...</div>
+<div id="results"></div>
+<script>
+const SCALE = 10, SIZE = 24 * SCALE, NS = 'http://www.w3.org/2000/svg';
+const SHAPES = ['path', 'rect', 'circle', 'ellipse', 'line', 'polyline', 'polygon'];
+const NEAR = 0.5;        // minimum clear gap between separate strokes, in icon px
+const SAFE = [1, 23];    // painted pixels must stay inside this box (geometry 1.75-22.25 at 1.5 stroke)
+
+function render(svgText) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+            const c = document.createElement('canvas');
+            c.width = c.height = SIZE;
+            const ctx = c.getContext('2d');
+            ctx.drawImage(img, 0, 0, SIZE, SIZE);
+            const data = ctx.getImageData(0, 0, SIZE, SIZE).data;
+            const mask = new Uint8Array(SIZE * SIZE);
+            for (let i = 0; i < mask.length; i++) mask[i] = data[i * 4 + 3] > 64 ? 1 : 0;
+            resolve(mask);
+        };
+        img.onerror = reject;
+        img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgText);
+    });
+}
+
+/** Split each shape (and each subpath of a path) into its own standalone SVG, keeping ancestor groups. */
+function pieces(content) {
+    const doc = new DOMParser().parseFromString(`<svg xmlns="${NS}" viewBox="0 0 24 24">${content}</svg>`, 'image/svg+xml');
+    const out = [];
+    doc.documentElement.querySelectorAll(SHAPES.join(',')).forEach(el => {
+        const parts = el.localName === 'path'
+            ? el.getAttribute('d').split(/(?=M)/).filter(s => s.trim())
+            : [null];
+        parts.forEach(d => {
+            let node = el.cloneNode(false);
+            if (d) node.setAttribute('d', d);
+            const label = d ? d.slice(0, 40) : el.outerHTML.slice(0, 60);
+            for (let p = el.parentNode; p && p.localName === 'g'; p = p.parentNode) {
+                const g = p.cloneNode(false);
+                g.appendChild(node);
+                node = g;
+            }
+            out.push({ label, xml: new XMLSerializer().serializeToString(node) });
+        });
+    });
+    return out;
+}
+
+const wrap = (inner, extraWidth = 0) => {
+    const sw = extraWidth ? ` stroke-width="${1.5 + extraWidth}"` : '';
+    // Grow every shape by extraWidth/2 on each side: strokes get a wider stroke; filled dots
+    // (stroke="none") get a stroke of extraWidth so they grow by the same amount
+    const body = extraWidth
+        ? inner.replace(/stroke-width="[^"]*"/g, '').replace(/stroke="none"/g, `stroke="#000" stroke-width="${extraWidth}"`)
+        : inner;
+    return `<svg xmlns="${NS}" viewBox="0 0 24 24" width="${SIZE}" height="${SIZE}"><g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round"${sw || ' stroke-width="1.5"'}>${body.replace(/currentColor/g, '#000')}</g></svg>`;
+};
+
+function overlap(a, b) {
+    let n = 0;
+    for (let i = 0; i < a.length; i++) if (a[i] && b[i]) n++;
+    return n;
+}
+const area = m => m.reduce((s, v) => s + v, 0);
+
+async function lintIcon(icon) {
+    const content = icon.svg.content.replace(/^<g[^>]*>|<\/g>$/g, '');
+    const parts = pieces(content);
+    const issues = [];
+
+    // bounds
+    const whole = await render(wrap(content));
+    let minX = SIZE, minY = SIZE, maxX = 0, maxY = 0;
+    for (let y = 0; y < SIZE; y++) for (let x = 0; x < SIZE; x++) if (whole[y * SIZE + x]) {
+        if (x < minX) minX = x; if (x > maxX) maxX = x; if (y < minY) minY = y; if (y > maxY) maxY = y;
+    }
+    const box = [minX, minY, maxX + 1, maxY + 1].map(v => v / SCALE);
+    if (box[0] < SAFE[0] || box[1] < SAFE[0] || box[2] > SAFE[1] || box[3] > SAFE[1]) {
+        issues.push(`outside safe area: ${box.map(v => v.toFixed(1)).join(', ')}`);
+    }
+
+    // pairwise near-misses and doubled strokes
+    const masks = await Promise.all(parts.map(p => render(wrap(p.xml))));
+    const fat = await Promise.all(parts.map(p => render(wrap(p.xml, NEAR * 2))));
+    const touches = parts.map((_, i) => parts.map((__, j) => i !== j && overlap(masks[i], masks[j]) > 0));
+    // Lines that both join the same shape (spokes from a node, legs from a mast top) may converge there
+    const shareJunction = (i, j) => touches[i].some((t, k) => t && touches[j][k]);
+    for (let i = 0; i < parts.length; i++) {
+        for (let j = i + 1; j < parts.length; j++) {
+            const real = overlap(masks[i], masks[j]);
+            if (real === 0 && !shareJunction(i, j) && (overlap(fat[i], masks[j]) > 0 || overlap(masks[i], fat[j]) > 0)) {
+                issues.push(`near-miss: "${parts[i].label}" ↔ "${parts[j].label}"`);
+            } else if (real > 0.7 * Math.min(area(masks[i]), area(masks[j]))) {
+                issues.push(`doubled: "${parts[i].label}" ↔ "${parts[j].label}"`);
+            }
+        }
+    }
+    return issues;
+}
+
+(async () => {
+    const data = await (await fetch('manifests/stl.json', { cache: 'no-store' })).json();
+    const results = document.getElementById('results');
+    const report = {};
+    let bad = 0;
+    for (const icon of data.icons) {
+        const issues = await lintIcon(icon);
+        report[icon.name] = issues;
+        if (issues.length) bad++;
+        results.insertAdjacentHTML('beforeend', `<div class="row"><svg viewBox="${icon.svg.viewBox}">${icon.svg.content}</svg>` +
+            `<div><b>${icon.name}</b> <span class="${issues.length ? 'bad' : 'ok'}">${issues.length ? issues.length + ' issue(s)' : 'OK'}</span>` +
+            issues.map(s => `<br><code>${s.replace(/</g, '&lt;')}</code>`).join('') + '</div></div>');
+    }
+    document.getElementById('summary').textContent = `${data.icons.length} icons checked, ${bad} with issues`;
+    window.lintReport = report;
+})();
+</script>
+</body>
+</html>

@@ -46,10 +46,14 @@ Copy and download work in the browser.
 
 ## Add an STL icon
 
-1. Draw it on a 24×24 grid (Figma, Illustrator or by hand), using strokes in `currentColor`.
-   To match the existing set, copy an SVG from `custom-icons/` as a starting point: stroke width 1.75, round caps and joins.
+Follow [ICON-STYLE-GUIDE.md](ICON-STYLE-GUIDE.md): 24×24 grid, 1.5 stroke, round caps and joins, at least 0.75px
+between separate lines, nothing outside 1 to 23, and the shared motifs (mast, signal waves, cloud, chip and so on).
+
+1. Draw it on a 24×24 grid (Figma, Illustrator or by hand). The quickest start is to copy a similar SVG from `custom-icons/`.
 2. Save it as `custom-icons/<name>.svg` with a `data-title` and comma-separated `data-tags` on the `<svg>` element.
 3. Run `python scripts/build.py`.
+4. Run `python scripts/serve.py`, open http://localhost:3000/icon-lint.html and fix anything it flags
+   (lines too close together, doubled lines, or drawing outside the safe area).
 
 ## Add a company logo
 
