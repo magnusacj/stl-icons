@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Direct-to-device satellite (D2D)"
+     data-tags="d2d, direct to device, direct to cell, satellite, ntn, satellite to phone, leo, starlink, ast spacemobile, lynk">
+  <g transform="rotate(45 17 7)">
+    <rect x="15.5" y="5.5" width="3" height="3" rx=".5"/>
+    <rect x="11.5" y="5.5" width="3" height="3" rx=".5"/>
+    <rect x="19.5" y="5.5" width="3" height="3" rx=".5"/>
+    <path d="M14.5 7h1M18.5 7h1"/>
+  </g>
+  <rect x="2" y="13" width="6" height="9.5" rx="1.25"/>
+  <path d="M4.25 20h1.5M8.5 9.5a3 3 0 0 1 3 3M8.5 7a5.5 5.5 0 0 1 5.5 5.5"/>
+</svg>

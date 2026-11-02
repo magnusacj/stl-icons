@@ -90,7 +90,9 @@
 
             <main class="icons-panel">
                 <div class="icons-header">
-                    <span id="currentTitle">Loading...</span>
+                    <select id="sectionSelect" class="section-select" aria-label="Choose a section">
+                        <option>Loading...</option>
+                    </select>
                     <span id="iconCount" class="icon-count"></span>
                 </div>
 
@@ -99,6 +101,15 @@
                 <div class="loading-state hidden">
                     <div class="spinner"></div>
                     <p>Loading icons...</p>
+                </div>
+
+                <div id="designerTip" class="tip hidden" role="note">
+                    <div>
+                        <b>Designer covering this panel?</b> PowerPoint opens Designer whenever a picture is added,
+                        and add-ins can't stop it. To turn it off: <b>File › Options › General</b>, untick
+                        <b>Automatically show me design ideas</b>.
+                    </div>
+                    <button id="dismissTip" class="action-btn">Got it</button>
                 </div>
 
                 <!-- Selected icon -->

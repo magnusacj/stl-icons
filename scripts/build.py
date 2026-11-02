@@ -1,8 +1,9 @@
 """Build STL Icons.
 
 1. Compiles every SVG in custom-icons/ into app/manifests/stl.json
-2. Checks that every icon referenced in app/collections.js exists
-3. With --base-url, writes the PowerPoint manifest app/manifest.xml
+2. Compiles app/logos/logos.json into app/manifests/stllogos.json
+3. Checks that every icon referenced in app/collections.js exists
+4. With --base-url, writes the PowerPoint manifest app/manifest.xml
 
 Usage:  python scripts/build.py [--base-url https://your-host/path]
 Exit code is 1 if any collection reference is broken.
@@ -51,6 +52,23 @@ def build_custom_icons():
     print(f'Compiled {len(icons)} custom icons -> app/manifests/stl.json')
 
 
+def build_logos():
+    """app/logos/logos.json (one entry per image file) -> app/manifests/stllogos.json"""
+    logos = json.loads((ROOT / 'app' / 'logos' / 'logos.json').read_text(encoding='utf-8'))
+    icons = []
+    for logo in logos:
+        if not (ROOT / 'app' / 'logos' / logo['file']).exists():
+            print(f"  missing image for logo {logo['name']}: {logo['file']}")
+            continue
+        icons.append({'name': logo['name'], 'title': logo['title'], 'tags': logo.get('tags', []),
+                      'category': logo.get('category', ''), 'image': 'logos/' + logo['file']})
+    manifest = {'id': 'stllogos', 'name': 'STL logos', 'version': '1.0.0',
+                'totalIcons': len(icons), 'icons': icons}
+    (MANIFEST_DIR / 'stllogos.json').write_text(json.dumps(manifest, ensure_ascii=False, separators=(',', ':')),
+                                               encoding='utf-8')
+    print(f'Compiled {len(icons)} logos -> app/manifests/stllogos.json')
+
+
 def check_collections():
     source = re.sub(r'/\*.*?\*/', '', COLLECTIONS.read_text(encoding='utf-8'), flags=re.S)
     refs = re.findall(r"'([a-z0-9]+):([a-z0-9-]+)(?:\|[^']*)?'", source)
@@ -94,6 +112,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     build_custom_icons()
+    build_logos()
     ok = check_collections()
     if args.base_url:
         write_office_manifest(args.base_url)

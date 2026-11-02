@@ -30,7 +30,7 @@
 
     --radius: 8px;
     --radius-sm: 4px;
-    --sidebar-width: 190px;
+    --sidebar-width: 210px;
 }
 
 .hidden {
@@ -49,7 +49,7 @@ body {
     color: var(--text-primary);
     overflow: hidden;
     height: 100vh;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 button {
@@ -109,7 +109,7 @@ button {
 }
 
 .tagline {
-    font-size: 11px;
+    font-size: 12px;
     color: #c9ccd8;
     margin-top: 1px;
 }
@@ -142,7 +142,7 @@ button {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     color: var(--text-primary);
-    font-size: 13px;
+    font-size: 14px;
     font-family: inherit;
 }
 
@@ -164,7 +164,7 @@ button {
     display: flex;
     align-items: center;
     gap: 5px;
-    font-size: 11px;
+    font-size: 12px;
     cursor: pointer;
     user-select: none;
     color: var(--text-secondary);
@@ -183,10 +183,10 @@ button {
 }
 
 .control-label {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     color: var(--text-secondary);
-    width: 40px;
+    width: 46px;
     flex-shrink: 0;
 }
 
@@ -231,8 +231,8 @@ input[type='color'] {
     border: none;
     background: transparent;
     padding: 0 8px;
-    height: 26px;
-    font-size: 11px;
+    height: 28px;
+    font-size: 12px;
     color: var(--text-secondary);
     cursor: pointer;
     display: flex;
@@ -271,14 +271,14 @@ input[type='color'] {
 }
 
 .control-select {
-    height: 26px;
+    height: 28px;
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     padding: 0 6px;
     background: var(--bg-card);
     color: var(--text-primary);
     font-family: inherit;
-    font-size: 12px;
+    font-size: 13px;
 }
 
 /* Main Content */
@@ -310,7 +310,7 @@ body.sidebar-collapsed .sidebar {
 
 .sidebar-header {
     padding: 10px 12px 6px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
     color: var(--text-muted);
     text-transform: uppercase;
@@ -353,7 +353,7 @@ body.sidebar-collapsed .sidebar {
     gap: 6px;
     padding: 7px 12px;
     cursor: pointer;
-    font-size: 12px;
+    font-size: 13.5px;
     color: var(--text-secondary);
     border-left: 3px solid transparent;
     white-space: nowrap;
@@ -377,7 +377,7 @@ body.sidebar-collapsed .sidebar {
 }
 
 .library-item .count {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-muted);
 }
 
@@ -401,15 +401,45 @@ body.sidebar-collapsed .sidebar {
     justify-content: space-between;
     align-items: baseline;
     gap: 8px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     border-bottom: 1px solid var(--border);
+}
+
+.section-select {
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    padding: 3px 24px 3px 6px;
+    margin-left: -6px;
+    min-width: 0;
+    max-width: 75%;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    appearance: none;
+    field-sizing: content;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23f39100' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 6px center;
+}
+
+.section-select:hover,
+.section-select:focus {
+    border-color: var(--border);
+    background-color: var(--bg-card);
+    outline: none;
+}
+
+.section-select option,
+.section-select optgroup {
+    font-weight: normal;
 }
 
 .icon-count {
     color: var(--text-muted);
     font-weight: normal;
-    font-size: 11px;
+    font-size: 12px;
     white-space: nowrap;
 }
 
@@ -418,14 +448,14 @@ body.sidebar-collapsed .sidebar {
     overflow-y: auto;
     padding: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
     gap: 6px;
     align-content: start;
 }
 
 .grid-heading {
     grid-column: 1 / -1;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: var(--text-secondary);
     text-transform: uppercase;
@@ -462,6 +492,25 @@ body.sidebar-collapsed .sidebar {
 
 .icon-item.has-shape {
     padding: 6px;
+}
+
+/* Logos are wide wordmarks: give them two columns */
+.icon-item.logo {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1;
+    padding: 6px;
+}
+
+.icon-item.logo img,
+.detail-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.detail-preview:has(img) {
+    width: 84px;
 }
 
 .icon-item.on-dark {
@@ -544,7 +593,7 @@ body.sidebar-collapsed .sidebar {
     border: none;
     border-radius: var(--radius-sm);
     padding: 8px 18px;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
 }
@@ -552,6 +601,26 @@ body.sidebar-collapsed .sidebar {
 .load-more-btn:hover,
 .action-btn.primary:hover {
     background: #3a4266;
+}
+
+/* One-time tip shown after the first insert */
+.tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 12px;
+    background: var(--stl-tint-peach);
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.tip b {
+    font-weight: 700;
+}
+
+.tip .action-btn {
+    flex-shrink: 0;
 }
 
 /* Detail bar */
@@ -583,11 +652,11 @@ body.sidebar-collapsed .sidebar {
 
 .detail-title {
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .detail-source {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-muted);
 }
 
@@ -601,8 +670,8 @@ body.sidebar-collapsed .sidebar {
     background: var(--bg-card);
     color: var(--text-primary);
     border-radius: var(--radius-sm);
-    padding: 6px 9px;
-    font-size: 11px;
+    padding: 6px 10px;
+    font-size: 12px;
     cursor: pointer;
 }
 
@@ -630,7 +699,7 @@ body:not(.in-office) .office-only {
     background: var(--stl-navy);
     border-radius: var(--radius);
     color: #fff;
-    font-size: 12px;
+    font-size: 13px;
     opacity: 0;
     transition: all 0.25s;
     z-index: 100;

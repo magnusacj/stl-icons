@@ -35,7 +35,7 @@ const CORE_LIBRARIES = ['stl', 'tabler', 'carbon', 'lucide', 'phosphor', 'materi
 const MULTI_COLOR_LIBS = ['crypto', 'flag', 'antdm', 'logos', 'dev', 'payment', 'file'];
 
 const LIBRARY_NAMES = {
-    stl: 'STL originals', tabler: 'Tabler', carbon: 'IBM Carbon', lucide: 'Lucide', phosphor: 'Phosphor',
+    stl: 'STL originals', stllogos: 'STL logos', tabler: 'Tabler', carbon: 'IBM Carbon', lucide: 'Lucide', phosphor: 'Phosphor',
     material: 'Material Symbols', mdi: 'Material Design Icons', simple: 'Simple Icons (brands)',
     logos: 'Logos (colour)', health: 'Health Icons', fluent: 'Microsoft Fluent', bootstrap: 'Bootstrap',
     awesome: 'Font Awesome', flag: 'Flags', remix: 'Remix', iconoir: 'Iconoir', feather: 'Feather'
@@ -219,6 +219,14 @@ function setupEventListeners() {
         saveSettings();
     });
 
+    document.getElementById('sectionSelect').addEventListener('change', (e) => {
+        const [type, id] = e.target.value.split(':');
+        if (type === 'search') return;
+        clearSearch();
+        if (type === 'library') showLibrary(id);
+        else showCollection(id);
+    });
+
     document.getElementById('toggleSidebar').addEventListener('click', () => {
         document.body.classList.toggle('sidebar-collapsed');
     });
@@ -247,6 +255,10 @@ function setupEventListeners() {
     document.getElementById('svgBtn').addEventListener('click', () => state.selected && downloadEntry(state.selected, 'svg'));
     document.getElementById('pngBtn').addEventListener('click', () => state.selected && downloadEntry(state.selected, 'png'));
     document.getElementById('favBtn').addEventListener('click', toggleFavourite);
+    document.getElementById('dismissTip').addEventListener('click', () => {
+        store.set('designerTipDismissed', true);
+        document.getElementById('designerTip').classList.add('hidden');
+    });
 }
 
 // ---------- Manifests ----------
@@ -291,6 +303,12 @@ function getIcon(entry) {
     return manifest ? manifest.byName.get(entry.name) : null;
 }
 
+/** Logos are full-colour pictures: never recoloured, inserted as PNG. */
+function isImage(entry) {
+    const icon = getIcon(entry);
+    return !!(icon && icon.image);
+}
+
 function parseRef(ref) {
     const [key, tags] = ref.split('|');
     const [lib, name] = key.split(':');
@@ -333,6 +351,18 @@ function renderSidebar() {
         </div>
     `).join('');
 
+    const select = document.getElementById('sectionSelect');
+    const searchOption = select.querySelector('option[value="search"]');
+    const optionsFor = (list, type, label) => list.map(item =>
+        `<option value="${type}:${item.id}">${escapeHtml(label(item))}</option>`).join('');
+    select.innerHTML =
+        `<optgroup label="STL sections">${optionsFor(allCollections(), 'collection', c => c.name)}</optgroup>` +
+        `<optgroup label="All libraries">${optionsFor(libraryIndex, 'library', l => libraryName(l.id))}</optgroup>`;
+    if (searchOption) {
+        select.prepend(searchOption);
+        select.value = 'search';
+    }
+
     document.querySelectorAll('[data-collection]').forEach(el => {
         el.addEventListener('click', () => { clearSearch(); showCollection(el.dataset.collection); collapseIfNarrow(); });
     });
@@ -343,6 +373,8 @@ function renderSidebar() {
 }
 
 function markActiveSidebarItem() {
+    const select = document.getElementById('sectionSelect');
+    if (!select.querySelector('option[value="search"]')) select.value = `${state.view.type}:${state.view.id}`;
     document.querySelectorAll('[data-collection]').forEach(el => {
         el.classList.toggle('active', state.view.type === 'collection' && state.view.id === el.dataset.collection);
     });
@@ -379,8 +411,18 @@ async function showCollection(id) {
 
     if (state.view.type !== 'collection' || state.view.id !== collection.id) return;
     showLoading(false);
-    setGroups([{ title: null, items }]);
-    setTitle(collection.name, `${items.length} icons`);
+    if (collection.groupBy) {
+        const groups = new Map();
+        items.forEach(item => {
+            const key = getIcon(item)[collection.groupBy] || 'Other';
+            if (!groups.has(key)) groups.set(key, []);
+            groups.get(key).push(item);
+        });
+        setGroups([...groups].map(([title, groupItems]) => ({ title, items: groupItems })));
+    } else {
+        setGroups([{ title: null, items }]);
+    }
+    setTitle(collection.name, `${items.length} ${collection.library === 'stllogos' ? 'logos' : 'icons'}`);
 }
 
 async function showLibrary(id) {
@@ -400,7 +442,9 @@ async function showLibrary(id) {
 
 function setGroups(groups) {
     state.groups = groups;
-    state.displayLimit = PAGE_SIZE;
+    // Show curated sets (e.g. all logos) in one go; page through big libraries
+    const total = groups.reduce((n, g) => n + g.items.length, 0);
+    state.displayLimit = total <= 250 ? total : PAGE_SIZE;
     renderGrid();
 }
 
@@ -472,12 +516,15 @@ async function runSearch(query) {
     const token = ++searchToken;
     const terms = expandQuery(query);
     markActiveSidebarItem();
-    setTitle(`Search: “${query}”`, 'Searching...');
+    setTitle(`Search: “${query}”`, 'Searching...', true);
 
     // 1. STL sections first: curated and tagged for STL topics
     const curated = (window.STL_COLLECTIONS || []);
-    const curatedLibs = new Set(['stl']);
-    curated.forEach(c => (c.icons || []).forEach(ref => curatedLibs.add(parseRef(ref).lib)));
+    const curatedLibs = new Set();
+    curated.forEach(c => {
+        if (c.library) curatedLibs.add(c.library);
+        (c.icons || []).forEach(ref => curatedLibs.add(parseRef(ref).lib));
+    });
     await loadManifests([...curatedLibs]);
     if (token !== searchToken) return;
 
@@ -495,9 +542,11 @@ async function runSearch(query) {
         }
     };
 
-    const stlManifest = manifests.get('stl');
-    if (stlManifest) stlManifest.data.icons.forEach(i => consider({ lib: 'stl', name: i.name, tags: [] }, stlHits));
-    curated.forEach(c => (c.icons || []).forEach(ref => consider(parseRef(ref), stlHits)));
+    curated.forEach(c => {
+        const own = c.library && manifests.get(c.library);
+        if (own) own.data.icons.forEach(i => consider({ lib: c.library, name: i.name, tags: [] }, stlHits));
+        (c.icons || []).forEach(ref => consider(parseRef(ref), stlHits));
+    });
     stlHits.sort((a, b) => b.score - a.score);
 
     const groups = [{ title: 'STL sections', items: stlHits }, { title: 'Open-source libraries', items: [], loading: true }];
@@ -506,7 +555,9 @@ async function runSearch(query) {
     renderGrid();
 
     // 2. Open-source libraries
-    const libIds = state.allLibraries ? libraryIndex.map(l => l.id) : CORE_LIBRARIES.filter(id => id !== 'stl');
+    // STL's own libraries were searched in full above
+    const libIds = (state.allLibraries ? libraryIndex.map(l => l.id) : CORE_LIBRARIES)
+        .filter(id => id !== 'stl' && id !== 'stllogos');
     await loadManifests(libIds);
     if (token !== searchToken) return;
 
@@ -521,7 +572,7 @@ async function runSearch(query) {
     groups[1] = { title: 'Open-source libraries', items: libHits.slice(0, 1500), more: libHits.length > 1500 };
     renderGrid();
     const total = stlHits.length + libHits.length;
-    setTitle(`Search: “${query}”`, `${total} icons`);
+    setTitle(`Search: “${query}”`, `${total} icons`, true);
 }
 
 // ---------- SVG building ----------
@@ -645,6 +696,31 @@ function svgToPngBase64(svg, px) {
     });
 }
 
+/** PNG (base64) of a logo file at its own size, capped so slides stay small. */
+function imageToPngBase64(src, maxWidth) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+            const scale = Math.min(1, maxWidth / img.naturalWidth);
+            const canvas = document.createElement('canvas');
+            canvas.width = Math.round(img.naturalWidth * scale);
+            canvas.height = Math.round(img.naturalHeight * scale);
+            canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+            resolve({ base64: canvas.toDataURL('image/png').split(',')[1], ratio: img.naturalWidth / img.naturalHeight });
+        };
+        img.onerror = reject;
+        img.src = src;
+    });
+}
+
+/** PNG for any entry: logos as they are, icons styled with the current settings. */
+async function entryPng(entry) {
+    const icon = getIcon(entry);
+    if (icon.image) return imageToPngBase64(icon.image, 1200);
+    const { width, height } = insertSize(entry);
+    return { base64: await svgToPngBase64(buildSvg(entry, 512), 512), ratio: width / height };
+}
+
 // ---------- Rendering ----------
 
 function isLight(hex) {
@@ -673,13 +749,20 @@ function renderGrid() {
         }
         for (const entry of group.items) {
             if (shown >= state.displayLimit) break;
-            const svg = buildSvg(entry, 48);
-            if (!svg) continue;
             const key = `${entry.lib}:${entry.name}`;
             const icon = getIcon(entry);
+            if (!icon) continue;
             const label = `${icon.title || icon.name} · ${libraryName(entry.lib)}`;
-            html += `<div class="${cellClass}${key === selectedKey ? ' selected' : ''}" data-key="${key}" title="${escapeHtml(label)}">` +
-                `${svg}${entry.lib === 'stl' ? '<span class="stl-badge">★</span>' : ''}</div>`;
+            const selected = key === selectedKey ? ' selected' : '';
+            if (icon.image) {
+                html += `<div class="icon-item logo${selected}" data-key="${key}" title="${escapeHtml(label)}">` +
+                    `<img src="${icon.image}" alt="${escapeHtml(icon.title)}" loading="lazy"></div>`;
+            } else {
+                const svg = buildSvg(entry, 48);
+                if (!svg) continue;
+                html += `<div class="${cellClass}${selected}" data-key="${key}" title="${escapeHtml(label)}">` +
+                    `${svg}${entry.lib === 'stl' ? '<span class="stl-badge">★</span>' : ''}</div>`;
+            }
             shown++;
         }
     }
@@ -693,8 +776,17 @@ function renderGrid() {
     grid.innerHTML = html;
 }
 
-function setTitle(title, count) {
-    document.getElementById('currentTitle').textContent = title;
+/** The header dropdown shows the current section, or a search entry while searching. */
+function setTitle(title, count, isSearch = false) {
+    const select = document.getElementById('sectionSelect');
+    const searchOption = select.querySelector('option[value="search"]');
+    if (searchOption) searchOption.remove();
+    if (isSearch) {
+        select.insertAdjacentHTML('afterbegin', `<option value="search">${escapeHtml(title)}</option>`);
+        select.value = 'search';
+    } else {
+        select.value = `${state.view.type}:${state.view.id}`;
+    }
     document.getElementById('iconCount').textContent = count;
 }
 
@@ -720,8 +812,15 @@ function renderDetail() {
         return;
     }
     bar.classList.remove('hidden');
-    document.getElementById('detailPreview').innerHTML = buildSvg(entry, 40) || '';
-    document.getElementById('detailPreview').style.background = state.shape === 'none' && isLight(state.color) ? '#5e6378' : '';
+    const preview = document.getElementById('detailPreview');
+    if (icon.image) {
+        preview.innerHTML = `<img src="${icon.image}" alt="">`;
+        preview.style.background = '';
+    } else {
+        preview.innerHTML = buildSvg(entry, 40) || '';
+        preview.style.background = state.shape === 'none' && isLight(state.color) ? '#5e6378' : '';
+    }
+    document.getElementById('svgBtn').classList.toggle('hidden', !!icon.image);
     document.getElementById('detailTitle').textContent = icon.title || icon.name;
     document.getElementById('detailSource').textContent = libraryName(entry.lib);
     const isFav = store.get('favourites', []).includes(`${entry.lib}:${entry.name}`);
@@ -751,6 +850,17 @@ function toggleFavourite() {
     renderDetail();
 }
 
+/** Logos keep their proportions: the size setting sets the height, within a width cap for long wordmarks. */
+function logoSize(ratio) {
+    let height = state.size * 0.75;
+    let width = height * ratio;
+    if (width > state.size * 3) {
+        width = state.size * 3;
+        height = width / ratio;
+    }
+    return { width, height };
+}
+
 function insertSize(entry) {
     const parts = iconParts(entry, state.color);
     const [, , w, h] = parts.viewBox.split(/[\s,]+/).map(Number);
@@ -766,19 +876,26 @@ async function insertEntry(entry, cell) {
     }
     if (cell) cell.classList.add('inserting');
     try {
-        const { width, height } = insertSize(entry);
         const offset = (insertCount++ % 6) * 12;
-        const position = { imageLeft: 100 + offset, imageTop: 100 + offset, imageWidth: width, imageHeight: height };
-        const vector = state.format === 'svg' && Office.context.requirements.isSetSupported('ImageCoercion', '1.2');
+        const at = { imageLeft: 100 + offset, imageTop: 100 + offset };
+        const vector = !isImage(entry) && state.format === 'svg' &&
+            Office.context.requirements.isSetSupported('ImageCoercion', '1.2');
 
         if (vector) {
-            await setSelectedData(buildSvg(entry, state.size), { coercionType: Office.CoercionType.XmlSvg, ...position });
+            const { width, height } = insertSize(entry);
+            await setSelectedData(buildSvg(entry, state.size), {
+                coercionType: Office.CoercionType.XmlSvg, ...at, imageWidth: width, imageHeight: height
+            });
         } else {
-            const png = await svgToPngBase64(buildSvg(entry, 512), 512);
-            await setSelectedData(png, { coercionType: Office.CoercionType.Image, ...position });
+            const png = await entryPng(entry);
+            const { width, height } = isImage(entry) ? logoSize(png.ratio) : insertSize(entry);
+            await setSelectedData(png.base64, {
+                coercionType: Office.CoercionType.Image, ...at, imageWidth: width, imageHeight: height
+            });
         }
         rememberRecent(entry);
         showToast('Inserted');
+        if (!store.get('designerTipDismissed', false)) document.getElementById('designerTip').classList.remove('hidden');
     } catch (error) {
         console.error('Insert failed:', error);
         showToast('Insert failed: ' + (error.message || error), 'error');
@@ -798,8 +915,8 @@ function setSelectedData(data, options) {
 
 async function copyEntry(entry) {
     try {
-        const png = await svgToPngBase64(buildSvg(entry, 512), 512);
-        const blob = await (await fetch('data:image/png;base64,' + png)).blob();
+        const png = await entryPng(entry);
+        const blob = await (await fetch('data:image/png;base64,' + png.base64)).blob();
         await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
         rememberRecent(entry);
         showToast('Copied - paste into your slide');
@@ -809,6 +926,10 @@ async function copyEntry(entry) {
             showToast('Copied as SVG code');
         } catch (e) {
             console.error('Copy failed:', error, e);
+            if (isImage(entry)) {
+                showToast('Copy not allowed here - use PNG download', 'error');
+                return;
+            }
             showToast('Copy not allowed here - use SVG or PNG download', 'error');
         }
     }
@@ -820,8 +941,8 @@ async function downloadEntry(entry, format) {
         if (format === 'svg') {
             blob = new Blob([buildSvg(entry, state.size * 4 / 3)], { type: 'image/svg+xml' });
         } else {
-            const png = await svgToPngBase64(buildSvg(entry, 512), 512);
-            blob = await (await fetch('data:image/png;base64,' + png)).blob();
+            const png = await entryPng(entry);
+            blob = await (await fetch('data:image/png;base64,' + png.base64)).blob();
         }
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);

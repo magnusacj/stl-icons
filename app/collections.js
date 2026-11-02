@@ -17,12 +17,20 @@ window.STL_COLLECTIONS = [
         library: 'stl' // every icon in custom-icons/
     },
     {
+        id: 'logos',
+        name: 'Logos',
+        description: 'Full-colour company logos from the STL slide templates, grouped as in the templates',
+        library: 'stllogos', // every logo in app/logos/logos.json
+        groupBy: 'category'
+    },
+    {
         id: 'telco',
         name: 'Telco & mobile',
         icons: [
-            'stl:ran', 'stl:open-ran', 'stl:cell-site', 'stl:small-cell', 'stl:5g', 'stl:core-network',
+            'stl:ran', 'stl:open-ran', 'stl:cell-site', 'stl:small-cell', 'stl:5g', 'stl:5g-to-6g', 'stl:core-network',
             'stl:network-slicing', 'stl:private-network', 'stl:fwa', 'stl:esim', 'stl:operator',
-            'stl:spectrum', 'stl:telco-ai', 'stl:satellite-ntn', 'stl:network-api', 'stl:iot',
+            'stl:spectrum', 'stl:telco-ai', 'stl:satellite-ntn', 'stl:d2d-satellite', 'stl:satellite-ground-station',
+            'stl:network-api', 'stl:network-api-code', 'stl:managed-service', 'stl:iot',
             'tabler:antenna|aerial, radio', 'tabler:building-broadcast-tower|cell tower, mast, ran',
             'tabler:broadcast|radio, transmit', 'tabler:antenna-bars-5|signal strength, coverage',
             'tabler:signal-5g', 'tabler:signal-6g', 'tabler:signal-4g', 'tabler:signal-lte',
@@ -38,7 +46,9 @@ window.STL_COLLECTIONS = [
         id: 'networks',
         name: 'Networks & connectivity',
         icons: [
-            'stl:fibre', 'stl:subsea-cable', 'stl:microwave-backhaul', 'stl:interconnection', 'stl:core-network',
+            'stl:wan', 'stl:lan', 'stl:fibre', 'stl:subsea-cable', 'stl:microwave-backhaul', 'stl:interconnection',
+            'stl:core-network', 'stl:satellite-ground-station', 'stl:network-api', 'stl:network-api-code',
+            'stl:managed-service',
             'tabler:network', 'tabler:topology-star-3', 'tabler:topology-ring-3', 'tabler:topology-complex',
             'tabler:topology-full-hierarchy', 'tabler:router', 'tabler:load-balancer', 'tabler:world-www|internet',
             'tabler:world|global, international', 'tabler:plug-connected|connect', 'tabler:link',
@@ -107,7 +117,7 @@ window.STL_COLLECTIONS = [
         id: 'enterprise',
         name: 'Enterprise & industries',
         icons: [
-            'stl:private-network', 'stl:iot',
+            'stl:private-network', 'stl:iot', 'stl:wan', 'stl:lan', 'stl:managed-service',
             'tabler:building|enterprise, office, company', 'tabler:building-skyscraper|corporate, city',
             'tabler:building-factory|manufacturing, industry 4.0', 'tabler:building-hospital|healthcare',
             'tabler:building-bank|financial services, banking', 'tabler:building-store|retail',
@@ -162,9 +172,9 @@ window.STL_COLLECTIONS = [
         ]
     },
     {
-        id: 'logos',
-        name: 'Companies & logos',
-        description: 'Brand logos (Simple Icons). Trademarks belong to their owners',
+        id: 'brand-icons',
+        name: 'Brand icons (one colour)',
+        description: 'Single-colour brand marks (Simple Icons) that take STL colours. Trademarks belong to their owners',
         icons: [
             'simple:vodafone', 'simple:orange', 'simple:tmobile', 'simple:verizon', 'simple:bt', 'simple:airtel',
             'simple:rakuten', 'simple:ericsson', 'simple:nokia', 'simple:huawei', 'simple:cisco', 'simple:samsung',

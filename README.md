@@ -5,8 +5,11 @@ A PowerPoint add-in for STL Partners, replacing the Noun Project subscription. I
 
 - **STL sections**: curated sets for Telco & mobile, Networks, Data centres, Cloud & edge, AI & data,
   Enterprise & industries, Sustainability & energy, Business & strategy, and Companies & logos
-- **STL originals**: 33 icons drawn for STL topics the open libraries don't cover (RAN, Open RAN, small cell,
-  network slicing, MEC, hyperscale/edge data centres, colocation, liquid cooling, subsea cable, NTN, telco AI, AI factory…)
+- **STL originals**: 40 icons drawn for STL topics the open libraries don't cover (RAN, Open RAN, small cell,
+  5G to 6G, network slicing, MEC, WAN/LAN, network APIs, managed service, hyperscale/edge data centres, colocation,
+  liquid cooling, subsea cable, NTN/D2D satellite, ground station, telco AI, AI factory…)
+- **Logos**: 165 full-colour company logos from the STL slide templates (operators by region, hyperscalers, NEPs,
+  OEMs, OSVs, SIs, BSS/OSS, ISVs, satellite operators), inserted as pictures at their own proportions
 - **STL colours by default**: navy, orange, red and grey swatches, plus the house style of a white icon on a coloured circle or square
 - **Search that knows STL language**: British spellings ("data centre", "fibre") and shorthand ("dc", "ran", "mno", "genai")
 - **Vector insertion**: icons go into PowerPoint as SVG, so they stay sharp and can be recoloured or converted to shapes
@@ -44,6 +47,20 @@ Copy and download work in the browser.
    To match the existing set, copy an SVG from `custom-icons/` as a starting point: stroke width 1.75, round caps and joins.
 2. Save it as `custom-icons/<name>.svg` with a `data-title` and comma-separated `data-tags` on the `<svg>` element.
 3. Run `python scripts/build.py`.
+
+## Add a company logo
+
+1. Save the logo as a PNG (transparent background preferred) in `app/logos/`, e.g. `app/logos/acme-telecom.png`.
+2. Add an entry to `app/logos/logos.json`:
+   `{"name": "acme-telecom", "title": "Acme Telecom", "file": "acme-telecom.png", "category": "Telecom operators: Europe", "tags": ["Telecom operators: Europe"]}`.
+   Use an existing `category` to put it in that group, or a new one to create a group.
+3. Run `python scripts/build.py`.
+
+## Designer opening over the panel
+
+PowerPoint opens its Designer pane whenever a picture is inserted, and add-ins have no way to stop it
+(Microsoft's add-in API for inserting pictures without it is still preview-only). Each user can turn it off once:
+**File → Options → General → untick "Automatically show me design ideas"**. The panel shows this tip after the first insert.
 
 ## Add or change a section
 
