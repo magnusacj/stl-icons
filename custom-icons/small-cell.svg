@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Small cell"
+     data-tags="small cell, street cell, densification, femtocell, picocell, outdoor cell, lamp post">
+  <rect x="5" y="4" width="6" height="6" rx="1.5"/>
+  <circle cx="8" cy="7" r=".75" fill="currentColor" stroke="none"/>
+  <path d="M8 10v11M5 21h6M13.5 4.8a3 3 0 0 1 0 4.4M16 2.8a5.8 5.8 0 0 1 0 8.4"/>
+</svg>

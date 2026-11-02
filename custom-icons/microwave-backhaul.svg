@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Microwave backhaul"
+     data-tags="microwave, backhaul, point to point, radio link, e-band, transmission, dish">
+  <path d="M7 4a3 4 0 0 0 0 8zM17 4a3 4 0 0 1 0 8z"/>
+  <path d="M5 11v10M19 11v10M3 21h4M17 21h4M7 8h1.5M17 8h-1.5"/>
+  <path d="M10.5 8h3" stroke-dasharray="1 2"/>
+</svg>

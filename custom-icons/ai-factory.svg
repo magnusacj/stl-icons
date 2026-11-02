@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="AI factory"
+     data-tags="ai factory, ai data centre, ai data center, gpu cluster, training, inference, sovereign ai, ai infrastructure">
+  <path d="M3 21V11l5 3v-3l5 3V7h8v14zM2 21h20"/>
+  <rect x="14.75" y="10.5" width="4.5" height="4.5" rx=".75"/>
+  <path d="M16.25 10.5V9.25M17.75 10.5V9.25M16.25 15v1.25M17.75 15v1.25"/>
+</svg>

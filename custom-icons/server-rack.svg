@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Server rack"
+     data-tags="server rack, rack, cabinet, compute, servers, data centre, data center, it load, colocation">
+  <rect x="6" y="2.5" width="12" height="19" rx="1.5"/>
+  <path d="M6 7.25h12M6 12h12M6 16.75h12M12.5 4.9h3M12.5 9.6h3M12.5 14.4h3M12.5 19.1h3"/>
+  <circle cx="9" cy="4.9" r=".75" fill="currentColor" stroke="none"/><circle cx="9" cy="9.6" r=".75" fill="currentColor" stroke="none"/><circle cx="9" cy="14.4" r=".75" fill="currentColor" stroke="none"/><circle cx="9" cy="19.1" r=".75" fill="currentColor" stroke="none"/>
+</svg>

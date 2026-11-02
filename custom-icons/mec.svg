@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Edge compute (MEC)"
+     data-tags="mec, multi-access edge computing, edge compute, edge cloud, network edge, far edge, latency">
+  <rect x="2" y="12" width="11" height="9" rx="1.5"/>
+  <path d="M2 16.5h11"/>
+  <circle cx="5" cy="14.25" r=".75" fill="currentColor" stroke="none"/><circle cx="5" cy="18.75" r=".75" fill="currentColor" stroke="none"/>
+  <circle cx="18.5" cy="5" r="1.2"/>
+  <path d="M18.5 6.2L16 21M18.5 6.2L21 21M13 14.5h3.8"/>
+  <path d="M16.4 3.1a2.7 2.7 0 0 0 0 3.8M20.6 3.1a2.7 2.7 0 0 1 0 3.8"/>
+</svg>

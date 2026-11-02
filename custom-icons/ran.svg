@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Radio access network (RAN)"
+     data-tags="ran, radio access network, cell tower, mast, base station, mobile network, macro, telco">
+  <circle cx="12" cy="6" r="1.5"/>
+  <path d="M12 7.5L8 21M12 7.5L16 21M10.7 12h2.6M9.5 16h5M10.7 12l3.8 4M13.3 12l-3.8 4M6 21h12"/>
+  <path d="M9.5 3.5a3.5 3.5 0 0 0 0 5M14.5 3.5a3.5 3.5 0 0 1 0 5M7.4 1.4a6.5 6.5 0 0 0 0 9.2M16.6 1.4a6.5 6.5 0 0 1 0 9.2"/>
+</svg>

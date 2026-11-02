@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Telco AI"
+     data-tags="telco ai, ai in telecoms, ai for networks, ai-ran, network ai, autonomous network, genai, operator ai">
+  <circle cx="9" cy="8" r="1.25"/>
+  <path d="M9 9.25L5.5 21M9 9.25L12.5 21M7 16h4M4 21h10"/>
+  <path d="M6.4 5.6a3.4 3.4 0 0 0 0 4.8M11.6 5.6a3.4 3.4 0 0 1 0 4.8"/>
+  <path d="M18 2.25c.42 2.2 1.55 3.33 3.75 3.75-2.2.42-3.33 1.55-3.75 3.75-.42-2.2-1.55-3.33-3.75-3.75 2.2-.42 3.33-1.55 3.75-3.75z"/>
+</svg>

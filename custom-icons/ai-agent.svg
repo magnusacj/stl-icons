@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="AI agent"
+     data-tags="ai agent, agentic ai, bot, assistant, copilot, genai, generative ai, llm, automation">
+  <rect x="4" y="8" width="13" height="11" rx="3"/>
+  <circle cx="8.5" cy="13" r="1" fill="currentColor" stroke="none"/><circle cx="12.5" cy="13" r="1" fill="currentColor" stroke="none"/>
+  <path d="M9 16.2h3M10.5 8V5.5M4 12H2.5v3H4M17 12h1.5v3H17"/>
+  <circle cx="10.5" cy="4.5" r="1"/>
+  <path d="M19.5 2c.25 1.5 1 2.25 2.5 2.5-1.5.25-2.25 1-2.5 2.5-.25-1.5-1-2.25-2.5-2.5 1.5-.25 2.25-1 2.5-2.5z"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Interconnection"
+     data-tags="interconnection, cross connect, internet exchange, ix, ixp, peering, carrier neutral, ecosystem">
+  <rect x="2.5" y="4" width="6" height="16" rx="1"/><rect x="15.5" y="4" width="6" height="16" rx="1"/>
+  <path d="M2.5 9.3h6M2.5 14.6h6M15.5 9.3h6M15.5 14.6h6"/>
+  <path d="M8.5 7c3.5 0 3.5 10 7 10M8.5 17c3.5 0 3.5-10 7-10"/>
+</svg>

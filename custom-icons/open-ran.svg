@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Open RAN"
+     data-tags="open ran, o-ran, oran, disaggregated ran, ru, du, cu, vran, virtualised ran, cloud ran">
+  <circle cx="7" cy="6" r="1.25"/>
+  <path d="M7 7.25L4 21M7 7.25L10 21M5.2 15.5h3.6M2.5 21h9"/>
+  <path d="M4.6 3.6a3.4 3.4 0 0 0 0 4.8M9.4 3.6a3.4 3.4 0 0 1 0 4.8"/>
+  <rect x="14" y="3" width="7" height="4.5" rx="1"/><rect x="14" y="9.75" width="7" height="4.5" rx="1"/><rect x="14" y="16.5" width="7" height="4.5" rx="1"/>
+  <path d="M17.5 7.5v2.25M17.5 14.25v2.25M9 12h5"/>
+</svg>

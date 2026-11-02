@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="5G"
+     data-tags="5g, 5g sa, standalone, nr, new radio, mobile generation, imt-2020">
+  <rect x="2" y="5" width="20" height="14" rx="3"/>
+  <path d="M10.5 9H7v2.5h2.25a2 2 0 0 1 0 4H7"/>
+  <path d="M17.8 9.95a3.25 3.25 0 1 0 .95 2.3H16"/>
+</svg>

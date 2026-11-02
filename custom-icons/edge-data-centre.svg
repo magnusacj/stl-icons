@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Edge data centre"
+     data-tags="edge data centre, edge data center, edge dc, micro data centre, regional, local, location">
+  <rect x="2" y="10" width="11" height="11" rx="1"/>
+  <path d="M2 13.5h11M2 17h11"/>
+  <circle cx="4.5" cy="11.75" r=".6" fill="currentColor" stroke="none"/><circle cx="4.5" cy="15.25" r=".6" fill="currentColor" stroke="none"/><circle cx="4.5" cy="19" r=".6" fill="currentColor" stroke="none"/>
+  <path d="M18 13s-4-3.6-4-6.6a4 4 0 0 1 8 0c0 3-4 6.6-4 6.6z"/>
+  <circle cx="18" cy="6.4" r="1.5"/>
+</svg>

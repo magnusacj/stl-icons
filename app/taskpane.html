@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STL Icons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="taskpane.css">
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+
+<body>
+    <script>if (window.innerWidth < 520) document.body.classList.add('sidebar-collapsed');</script>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <button id="toggleSidebar" class="icon-button" title="Show or hide sections" aria-label="Toggle sections">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+            <div class="logo-container">
+                <h1 class="logo">STL <span>Icons</span></h1>
+                <p class="tagline">Telco, data centre and tech icons for STL decks</p>
+            </div>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls">
+            <div class="search-row">
+                <div class="search-box">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M21 21l-6-6"/></svg>
+                    <input type="search" id="searchInput" placeholder="Search e.g. RAN, data centre, AI..." autocomplete="off">
+                </div>
+                <label class="toggle-control" title="Also search all 106 open-source libraries (slower first time)">
+                    <input type="checkbox" id="allLibrariesToggle">
+                    <span>All libraries</span>
+                </label>
+            </div>
+
+            <div class="controls-row">
+                <span class="control-label">Colour</span>
+                <div id="colorSwatches" class="swatches"></div>
+                <input type="color" id="colorPicker" value="#282f4c" title="Custom colour">
+            </div>
+
+            <div class="controls-row">
+                <span class="control-label">Shape</span>
+                <div id="shapeSegments" class="segments" role="radiogroup" aria-label="Background shape">
+                    <button data-shape="none" title="No background">None</button>
+                    <button data-shape="circle" title="Circle background"><span class="shape-dot circle"></span></button>
+                    <button data-shape="rounded" title="Rounded square background"><span class="shape-dot rounded"></span></button>
+                    <button data-shape="square" title="Square background"><span class="shape-dot square"></span></button>
+                </div>
+                <div id="bgControls" class="bg-controls">
+                    <div id="bgSwatches" class="swatches"></div>
+                    <input type="color" id="bgColorPicker" value="#f39100" title="Custom background colour">
+                </div>
+            </div>
+
+            <div class="controls-row">
+                <span class="control-label">Insert</span>
+                <select id="sizeSelect" class="control-select" title="Size on the slide">
+                    <option value="36">Small</option>
+                    <option value="54" selected>Medium</option>
+                    <option value="72">Large</option>
+                    <option value="108">X-Large</option>
+                </select>
+                <select id="formatSelect" class="control-select" title="Vector icons stay sharp and can be recoloured in PowerPoint">
+                    <option value="svg" selected>Vector (SVG)</option>
+                    <option value="png">Picture (PNG)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">STL sections</div>
+                <div id="collectionList" class="library-list"></div>
+                <button id="librariesHeader" class="sidebar-header sidebar-toggle" aria-expanded="false">
+                    <span>All libraries</span>
+                    <span id="totalCount" class="total-count">...</span>
+                </button>
+                <div id="libraryList" class="library-list hidden"></div>
+            </aside>
+
+            <main class="icons-panel">
+                <div class="icons-header">
+                    <span id="currentTitle">Loading...</span>
+                    <span id="iconCount" class="icon-count"></span>
+                </div>
+
+                <div id="iconsGrid" class="icons-grid"></div>
+
+                <div class="loading-state hidden">
+                    <div class="spinner"></div>
+                    <p>Loading icons...</p>
+                </div>
+
+                <!-- Selected icon -->
+                <div id="detailBar" class="detail-bar hidden">
+                    <div id="detailPreview" class="detail-preview"></div>
+                    <div class="detail-text">
+                        <div id="detailTitle" class="detail-title"></div>
+                        <div id="detailSource" class="detail-source"></div>
+                    </div>
+                    <div class="detail-actions">
+                        <button id="favBtn" class="action-btn" title="Add to favourites" aria-label="Favourite">☆</button>
+                        <button id="insertBtn" class="action-btn primary office-only" title="Insert on the current slide">Insert</button>
+                        <button id="copyBtn" class="action-btn" title="Copy as a picture, then paste anywhere">Copy</button>
+                        <button id="svgBtn" class="action-btn" title="Download SVG">SVG</button>
+                        <button id="pngBtn" class="action-btn" title="Download PNG">PNG</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div id="toast" class="toast" role="status"></div>
+    </div>
+
+    <script src="collections.js"></script>
+    <script src="taskpane.js"></script>
+</body>
+
+</html>

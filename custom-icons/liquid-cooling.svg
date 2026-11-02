@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Liquid cooling"
+     data-tags="liquid cooling, direct-to-chip, immersion cooling, cooling, thermal, water, gpu cooling, ai data centre">
+  <rect x="3" y="9" width="12" height="12" rx="1.5"/>
+  <rect x="6.5" y="12.5" width="5" height="5" rx=".5"/>
+  <path d="M7 9V7.5M11 9V7.5M7 21v1.5M11 21v1.5M3 13H1.5M3 17H1.5M15 13h1.5M15 17h1.5"/>
+  <path d="M18.5 2.2s-3.2 3.6-3.2 5.8a3.2 3.2 0 0 0 6.4 0c0-2.2-3.2-5.8-3.2-5.8z"/>
+</svg>
