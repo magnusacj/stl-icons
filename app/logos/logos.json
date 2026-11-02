@@ -1470,9 +1470,9 @@
   ]
  },
  {
-  "name": "satellite-operator-unidentified",
-  "title": "Satellite operator (unidentified)",
-  "file": "satellite-operator-unidentified.png",
+  "name": "viasat",
+  "title": "Viasat",
+  "file": "viasat.png",
   "category": "Satellite & NTN operators",
   "tags": [
    "Satellite & NTN operators"
