@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+     data-title="GPU cluster"
+     data-tags="gpu cluster, ai supercomputer, ai compute, accelerators, nvidia, ai infrastructure">
+  <rect x="3.5" y="3.5" width="6.5" height="6.5" rx="1.2"/><path d="M5.67 3.5v-1.5M5.67 10v1.5M3.5 5.67h-1.5M10 5.67h1.5M7.83 3.5v-1.5M7.83 10v1.5M3.5 7.83h-1.5M10 7.83h1.5"/><rect x="14" y="3.5" width="6.5" height="6.5" rx="1.2"/><path d="M16.17 3.5v-1.5M16.17 10v1.5M14 5.67h-1.5M20.5 5.67h1.5M18.33 3.5v-1.5M18.33 10v1.5M14 7.83h-1.5M20.5 7.83h1.5"/><rect x="3.5" y="14" width="6.5" height="6.5" rx="1.2"/><path d="M5.67 14v-1.5M5.67 20.5v1.5M3.5 16.17h-1.5M10 16.17h1.5M7.83 14v-1.5M7.83 20.5v1.5M3.5 18.33h-1.5M10 18.33h1.5"/><rect x="14" y="14" width="6.5" height="6.5" rx="1.2"/><path d="M16.17 14v-1.5M16.17 20.5v1.5M14 16.17h-1.5M20.5 16.17h1.5M18.33 14v-1.5M18.33 20.5v1.5M14 18.33h-1.5M20.5 18.33h1.5"/>
+</svg>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+     data-title="AI training"
+     data-tags="ai training, model training, training cluster, gpu training, compute">
+  <rect x="8" y="8" width="8" height="8" rx="1.2"/><path d="M10.67 8v-1.5M10.67 16v1.5M8 10.67h-1.5M16 10.67h1.5M13.33 8v-1.5M13.33 16v1.5M8 13.33h-1.5M16 13.33h1.5"/><rect x="10.4" y="10.4" width="3.2" height="3.2" rx="0.4"/><path d="M4 12a8 8 0 0 1 13.5-5.8M20 12a8 8 0 0 1-13.5 5.8M17.8 3v3.4h-3.4M6.2 21v-3.4h3.4"/>
+</svg>

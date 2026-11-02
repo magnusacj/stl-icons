@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Beamforming"
+     data-tags="beamforming, beam steering, mmwave, massive mimo, directional, radio beam">
+  <rect x="2" y="8" width="3" height="8" rx="1"/><ellipse cx="13" cy="12" rx="7.5" ry="2" transform="rotate(-30 5.5 12)"/><ellipse cx="13" cy="12" rx="7.5" ry="2" transform="rotate(0 5.5 12)"/><ellipse cx="13" cy="12" rx="7.5" ry="2" transform="rotate(30 5.5 12)"/>
+</svg>

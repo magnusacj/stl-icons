@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Neural network"
+     data-tags="neural network, deep learning, machine learning, model, ml, layers">
+  <circle cx="5" cy="6" r="1.5"/><circle cx="5" cy="12" r="1.5"/><circle cx="5" cy="18" r="1.5"/><circle cx="12" cy="9" r="1.5"/><circle cx="12" cy="15" r="1.5"/><circle cx="19" cy="12" r="1.5"/><path d="M6.38 6.59L10.62 8.41M5.92 7.18L11.08 13.82M6.38 11.41L10.62 9.59M6.38 12.59L10.62 14.41M5.92 16.82L11.08 10.18M6.38 17.41L10.62 15.59M13.38 9.59L17.62 11.41M13.38 14.41L17.62 12.59"/>
+</svg>

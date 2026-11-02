@@ -22,11 +22,44 @@
                     <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                 </svg>
             </button>
-            <div class="logo-container">
-                <h1 class="logo">STL <span>Icons</span></h1>
-                <p class="tagline">Telco, data centre and tech icons for STL decks</p>
-            </div>
+            <h1 class="logo">
+                <img src="assets/stl-logo-white.png" alt="STL Partners" class="logo-img">
+                <span class="logo-divider" aria-hidden="true"></span>
+                <span class="logo-text">Icons</span>
+            </h1>
+            <button id="settingsButton" class="icon-button" title="Settings" aria-label="Settings" aria-expanded="false" aria-controls="settingsPanel">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+            </button>
         </header>
+
+        <!-- Settings (rarely changed, so tucked away) -->
+        <div id="settingsPanel" class="settings-panel hidden">
+            <div class="settings-row">
+                <label for="sizeSelect">Insert size</label>
+                <select id="sizeSelect" class="control-select">
+                    <option value="36">Small</option>
+                    <option value="54">Medium</option>
+                    <option value="72">Large</option>
+                    <option value="108">X-Large</option>
+                </select>
+            </div>
+            <div class="settings-row">
+                <label for="formatSelect">Insert as</label>
+                <select id="formatSelect" class="control-select">
+                    <option value="svg">Vector (SVG)</option>
+                    <option value="png">Picture (PNG)</option>
+                </select>
+            </div>
+            <div class="settings-row">
+                <label for="allLibrariesToggle">Search all 106 libraries</label>
+                <input type="checkbox" id="allLibrariesToggle">
+            </div>
+            <p class="settings-note">Vector icons stay sharp and can be recoloured in PowerPoint. Searching all libraries
+                finds more icons but the first search takes a few seconds.</p>
+        </div>
 
         <!-- Controls -->
         <div class="controls">
@@ -35,10 +68,6 @@
                     <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="10" cy="10" r="7"/><path d="M21 21l-6-6"/></svg>
                     <input type="search" id="searchInput" placeholder="Search e.g. RAN, data centre, AI..." autocomplete="off">
                 </div>
-                <label class="toggle-control" title="Also search all 106 open-source libraries (slower first time)">
-                    <input type="checkbox" id="allLibrariesToggle">
-                    <span>All libraries</span>
-                </label>
             </div>
 
             <div class="controls-row">
@@ -59,20 +88,6 @@
                     <div id="bgSwatches" class="swatches"></div>
                     <input type="color" id="bgColorPicker" value="#f39100" title="Custom background colour">
                 </div>
-            </div>
-
-            <div class="controls-row">
-                <span class="control-label">Insert</span>
-                <select id="sizeSelect" class="control-select" title="Size on the slide">
-                    <option value="36">Small</option>
-                    <option value="54" selected>Medium</option>
-                    <option value="72">Large</option>
-                    <option value="108">X-Large</option>
-                </select>
-                <select id="formatSelect" class="control-select" title="Vector icons stay sharp and can be recoloured in PowerPoint">
-                    <option value="svg" selected>Vector (SVG)</option>
-                    <option value="png">Picture (PNG)</option>
-                </select>
             </div>
         </div>
 

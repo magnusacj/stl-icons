@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Data centre interconnect (DCI)"
+     data-tags="dci, data centre interconnect, data center interconnect, optical, wavelength, dark fibre">
+  <rect x="2" y="4" width="6" height="16" rx="1"/><circle cx="4" cy="6.67" r="0.6" fill="currentColor" stroke="none"/><path d="M2 9.33h6"/><circle cx="4" cy="12" r="0.6" fill="currentColor" stroke="none"/><path d="M2 14.67h6"/><circle cx="4" cy="17.33" r="0.6" fill="currentColor" stroke="none"/><rect x="16" y="4" width="6" height="16" rx="1"/><circle cx="18" cy="6.67" r="0.6" fill="currentColor" stroke="none"/><path d="M16 9.33h6"/><circle cx="18" cy="12" r="0.6" fill="currentColor" stroke="none"/><path d="M16 14.67h6"/><circle cx="18" cy="17.33" r="0.6" fill="currentColor" stroke="none"/><path d="M8 9c3 0 5 6 8 6M8 15c3 0 5-6 8-6"/>
+</svg>

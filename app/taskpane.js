@@ -49,9 +49,9 @@ const state = {
     color: '#282f4c',
     shape: 'none',
     bg: '#f39100',
-    size: 54,
+    size: 108,
     format: 'svg',
-    allLibraries: false
+    allLibraries: true
 };
 
 let libraryIndex = [];
@@ -97,7 +97,10 @@ async function boot() {
     booted = true;
     document.body.classList.toggle('in-office', inOffice);
 
-    Object.assign(state, store.get('settings', {}));
+    // v2 settings: new defaults (X-Large, all libraries). Keep colour choices from v1.
+    const v1 = store.get('settings', {});
+    Object.assign(state, { color: v1.color || state.color, shape: v1.shape || state.shape, bg: v1.bg || state.bg },
+        store.get('settings-v2', {}));
     setupControls();
     setupEventListeners();
 
@@ -118,7 +121,7 @@ async function boot() {
 
 function saveSettings() {
     const { color, shape, bg, size, format, allLibraries } = state;
-    store.set('settings', { color, shape, bg, size, format, allLibraries });
+    store.set('settings-v2', { color, shape, bg, size, format, allLibraries });
 }
 
 // ---------- Controls ----------
@@ -225,6 +228,12 @@ function setupEventListeners() {
         clearSearch();
         if (type === 'library') showLibrary(id);
         else showCollection(id);
+    });
+
+    document.getElementById('settingsButton').addEventListener('click', (e) => {
+        const panel = document.getElementById('settingsPanel');
+        panel.classList.toggle('hidden');
+        e.currentTarget.setAttribute('aria-expanded', String(!panel.classList.contains('hidden')));
     });
 
     document.getElementById('toggleSidebar').addEventListener('click', () => {
@@ -444,7 +453,7 @@ function setGroups(groups) {
     state.groups = groups;
     // Show curated sets (e.g. all logos) in one go; page through big libraries
     const total = groups.reduce((n, g) => n + g.items.length, 0);
-    state.displayLimit = total <= 250 ? total : PAGE_SIZE;
+    state.displayLimit = total <= 400 ? total : PAGE_SIZE;
     renderGrid();
 }
 
@@ -740,6 +749,7 @@ function renderGrid() {
     let html = '';
     let shown = 0;
     for (const group of state.groups) {
+        if (shown >= state.displayLimit && group.items.length) break;
         if (showHeadings) {
             const note = group.loading ? 'loading...' : `${group.items.length}${group.more ? '+' : ''}`;
             html += `<div class="grid-heading"><span>${group.title}</span><span class="muted">${note}</span></div>`;

@@ -31,6 +31,10 @@ window.STL_COLLECTIONS = [
             'stl:network-slicing', 'stl:private-network', 'stl:fwa', 'stl:esim', 'stl:operator',
             'stl:spectrum', 'stl:telco-ai', 'stl:satellite-ntn', 'stl:d2d-satellite', 'stl:satellite-ground-station',
             'stl:network-api', 'stl:network-api-code', 'stl:managed-service', 'stl:iot',
+            'stl:6g', 'stl:5g-advanced', 'stl:vran', 'stl:ai-ran', 'stl:massive-mimo', 'stl:beamforming', 'stl:mmwave',
+            'stl:neutral-host', 'stl:towerco', 'stl:coverage', 'stl:rural-connectivity', 'stl:spectrum-sharing',
+            'stl:spectrum-auction', 'stl:roaming', 'stl:volte-voice', 'stl:a2p-messaging', 'stl:cpaas', 'stl:quality-on-demand',
+            'stl:fixed-mobile-convergence', 'stl:oss-bss', 'stl:mission-critical',
             'tabler:antenna|aerial, radio', 'tabler:building-broadcast-tower|cell tower, mast, ran',
             'tabler:broadcast|radio, transmit', 'tabler:antenna-bars-5|signal strength, coverage',
             'tabler:signal-5g', 'tabler:signal-6g', 'tabler:signal-4g', 'tabler:signal-lte',
@@ -48,7 +52,9 @@ window.STL_COLLECTIONS = [
         icons: [
             'stl:wan', 'stl:lan', 'stl:fibre', 'stl:subsea-cable', 'stl:microwave-backhaul', 'stl:interconnection',
             'stl:core-network', 'stl:satellite-ground-station', 'stl:network-api', 'stl:network-api-code',
-            'stl:managed-service',
+            'stl:managed-service', 'stl:transport-network', 'stl:backhaul', 'stl:ftth', 'stl:cable-docsis', 'stl:naas',
+            'stl:network-automation', 'stl:autonomous-network', 'stl:intent-based-networking', 'stl:network-orchestration',
+            'stl:low-latency', 'stl:network-security', 'stl:dci', 'stl:quality-on-demand',
             'tabler:network', 'tabler:topology-star-3', 'tabler:topology-ring-3', 'tabler:topology-complex',
             'tabler:topology-full-hierarchy', 'tabler:router', 'tabler:load-balancer', 'tabler:world-www|internet',
             'tabler:world|global, international', 'tabler:plug-connected|connect', 'tabler:link',
@@ -68,6 +74,8 @@ window.STL_COLLECTIONS = [
         icons: [
             'stl:hyperscale-data-centre', 'stl:edge-data-centre', 'stl:colocation', 'stl:server-rack',
             'stl:liquid-cooling', 'stl:data-centre-power', 'stl:interconnection', 'stl:ai-factory', 'stl:ai-chip',
+            'stl:dci', 'stl:gpu-cluster', 'stl:rack-density', 'stl:cooling-chiller', 'stl:ups-backup-power', 'stl:power-grid',
+            'stl:renewable-energy', 'stl:heat-reuse', 'stl:water-usage', 'stl:data-sovereignty', 'stl:on-premise-edge',
             'carbon:data-center|data centre, dc', 'carbon:bare-metal-server|server', 'carbon:bare-metal-server-01|server',
             'carbon:server-dns', 'carbon:block-storage|storage', 'carbon:object-storage|storage', 'carbon:storage-pool',
             'carbon:temperature|cooling, thermal', 'carbon:snowflake|cooling', 'carbon:lightning|power, energy',
@@ -86,7 +94,9 @@ window.STL_COLLECTIONS = [
         id: 'cloud-edge',
         name: 'Cloud & edge',
         icons: [
-            'stl:telco-cloud', 'stl:mec', 'stl:edge-data-centre', 'stl:sovereign-cloud',
+            'stl:telco-cloud', 'stl:mec', 'stl:edge-data-centre', 'stl:sovereign-cloud', 'stl:hybrid-cloud', 'stl:multi-cloud',
+            'stl:cloud-native', 'stl:containers', 'stl:edge-ai', 'stl:on-premise-edge', 'stl:naas', 'stl:as-a-service',
+            'stl:platform', 'stl:data-sovereignty',
             'tabler:cloud', 'tabler:cloud-computing', 'tabler:cloud-network', 'tabler:cloud-data-connection',
             'tabler:cloud-lock|secure cloud, sovereign', 'tabler:cloud-cog|cloud management', 'tabler:cloud-upload',
             'tabler:container|containers, cnf', 'tabler:stack-2|stack, platform, layers', 'tabler:api',
@@ -101,7 +111,10 @@ window.STL_COLLECTIONS = [
         id: 'ai',
         name: 'AI & data',
         icons: [
-            'stl:telco-ai', 'stl:ai-agent', 'stl:ai-chip', 'stl:ai-factory', 'stl:digital-twin',
+            'stl:telco-ai', 'stl:ai-agent', 'stl:ai-chip', 'stl:ai-factory', 'stl:digital-twin', 'stl:generative-ai', 'stl:llm',
+            'stl:multi-agent-ai', 'stl:ai-inference', 'stl:ai-training', 'stl:gpu-cluster', 'stl:edge-ai', 'stl:ai-ran',
+            'stl:aiops', 'stl:voice-ai', 'stl:computer-vision', 'stl:neural-network', 'stl:ai-governance', 'stl:data-lake',
+            'stl:real-time-data', 'stl:analytics-dashboard', 'stl:quantum',
             'tabler:sparkles|genai, generative ai, ai', 'tabler:brain|ai, intelligence, ml',
             'tabler:robot|ai, automation, bot', 'tabler:robot-face|ai agent, bot',
             'tabler:message-chatbot|chatbot, llm, assistant', 'tabler:binary-tree|machine learning, model',
@@ -117,7 +130,10 @@ window.STL_COLLECTIONS = [
         id: 'enterprise',
         name: 'Enterprise & industries',
         icons: [
-            'stl:private-network', 'stl:iot', 'stl:wan', 'stl:lan', 'stl:managed-service',
+            'stl:private-network', 'stl:iot', 'stl:wan', 'stl:lan', 'stl:managed-service', 'stl:smart-factory',
+            'stl:industrial-robot', 'stl:connected-car', 'stl:logistics', 'stl:smart-port', 'stl:smart-city', 'stl:connected-health',
+            'stl:payments', 'stl:storefront', 'stl:smart-meter', 'stl:agritech', 'stl:mining', 'stl:mission-critical',
+            'stl:defence', 'stl:stadium-venue', 'stl:smb', 'stl:b2b2x', 'stl:on-premise-edge',
             'tabler:building|enterprise, office, company', 'tabler:building-skyscraper|corporate, city',
             'tabler:building-factory|manufacturing, industry 4.0', 'tabler:building-hospital|healthcare',
             'tabler:building-bank|financial services, banking', 'tabler:building-store|retail',
@@ -137,7 +153,8 @@ window.STL_COLLECTIONS = [
         id: 'sustainability',
         name: 'Sustainability & energy',
         icons: [
-            'stl:data-centre-power', 'stl:liquid-cooling',
+            'stl:data-centre-power', 'stl:liquid-cooling', 'stl:net-zero', 'stl:circular-economy', 'stl:sustainable-operations',
+            'stl:renewable-energy', 'stl:power-grid', 'stl:heat-reuse', 'stl:water-usage', 'stl:smart-meter',
             'tabler:leaf|green, eco, esg', 'tabler:plant|growth, green', 'tabler:plant-2', 'tabler:trees|nature',
             'tabler:recycle|circular economy', 'tabler:solar-panel|solar, renewables', 'tabler:solar-electricity',
             'tabler:wind-electricity|wind', 'tabler:building-wind-turbine|wind farm', 'tabler:battery-eco',
@@ -149,9 +166,24 @@ window.STL_COLLECTIONS = [
         ]
     },
     {
+        id: 'consumer',
+        name: 'Consumer services',
+        icons: [
+            'stl:consumer-bundle', 'stl:video-streaming', 'stl:cloud-gaming', 'stl:home-wifi', 'stl:wearable',
+            'stl:digital-identity', 'stl:customer-experience', 'stl:churn', 'stl:arpu', 'stl:ftth', 'stl:fwa', 'stl:esim',
+            'stl:payments', 'stl:roaming', 'stl:fixed-mobile-convergence', 'stl:cable-docsis',
+            'tabler:device-mobile|smartphone', 'tabler:device-tv|tv', 'tabler:device-gamepad-2|gaming', 'tabler:smart-home',
+            'tabler:headphones|music, audio', 'tabler:movie|video, film', 'tabler:shopping-cart|ecommerce', 'tabler:users|households'
+        ]
+    },
+    {
         id: 'business',
         name: 'Business & strategy',
         icons: [
+            'stl:infraco', 'stl:techco', 'stl:servco', 'stl:wholesale', 'stl:m-and-a', 'stl:business-model', 'stl:monetisation',
+            'stl:arpu', 'stl:cost-reduction', 'stl:capex', 'stl:market-sizing', 'stl:benchmarking', 'stl:go-to-market',
+            'stl:roadmap', 'stl:customer-research', 'stl:expert-network', 'stl:regulation', 'stl:skills', 'stl:innovation',
+            'stl:organisational-change', 'stl:partner-ecosystem', 'stl:platform', 'stl:as-a-service', 'stl:b2b2x',
             'tabler:chart-bar', 'tabler:chart-line', 'tabler:chart-pie', 'tabler:chart-arrows-vertical',
             'tabler:trending-up|growth', 'tabler:trending-down|decline', 'tabler:target|goal, objective',
             'tabler:target-arrow|focus, aim', 'tabler:bulb|idea, insight, innovation', 'tabler:rocket|launch, growth',

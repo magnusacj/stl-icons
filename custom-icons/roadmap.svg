@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Roadmap"
+     data-tags="roadmap, timeline, plan, milestones, strategy, phasing">
+  <path d="M3 20h4a3 3 0 0 0 0-6h10a3 3 0 0 0 0-6h-4M13 8V3h5l-1 1.25 1 1.25h-5"/><circle cx="3" cy="20" r="1.3" fill="currentColor" stroke="none"/>
+</svg>

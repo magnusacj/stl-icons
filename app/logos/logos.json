@@ -1486,5 +1486,1135 @@
   "tags": [
    "Satellite & NTN operators"
   ]
+ },
+ {
+  "name": "american-tower",
+  "title": "American Tower",
+  "file": "american-tower.png",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:American_Tower_Corporation_logo.svg"
+ },
+ {
+  "name": "crown-castle",
+  "title": "Crown Castle",
+  "file": "crown-castle.png",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Crown_Castle_Logo.svg"
+ },
+ {
+  "name": "sba-communications",
+  "title": "SBA Communications",
+  "file": "sba-communications.png",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:SBA_Communications_Logo.svg"
+ },
+ {
+  "name": "cellnex",
+  "title": "Cellnex",
+  "file": "cellnex.png",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Cellnex_Telecom_logo.svg"
+ },
+ {
+  "name": "vantage-towers",
+  "title": "Vantage Towers",
+  "file": "vantage-towers.png",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Vantage_Towers_logo_(2020-present).svg"
+ },
+ {
+  "name": "openreach",
+  "title": "Openreach",
+  "file": "openreach.png",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Openreach_2023.svg"
+ },
+ {
+  "name": "corning",
+  "title": "Corning",
+  "file": "corning.png",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Corning_Incorporated_Logo.svg"
+ },
+ {
+  "name": "commscope",
+  "title": "CommScope",
+  "file": "commscope.png",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:CommScope.png"
+ },
+ {
+  "name": "digital-realty",
+  "title": "Digital Realty",
+  "file": "digital-realty.png",
+  "category": "Data centre operators",
+  "tags": [
+   "Data centre operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Digital_Realty_TM_Brandmark_RGB_Black.svg"
+ },
+ {
+  "name": "cyrusone",
+  "title": "CyrusOne",
+  "file": "cyrusone.png",
+  "category": "Data centre operators",
+  "tags": [
+   "Data centre operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:CyrusOne_logo.svg"
+ },
+ {
+  "name": "interxion",
+  "title": "Interxion",
+  "file": "interxion.png",
+  "category": "Data centre operators",
+  "tags": [
+   "Data centre operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Interxion.png"
+ },
+ {
+  "name": "openai",
+  "title": "OpenAI",
+  "file": "openai.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:OpenAI_Blossom_and_wordmark_combination_2025.svg"
+ },
+ {
+  "name": "anthropic",
+  "title": "Anthropic",
+  "file": "anthropic.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Anthropic_logo.svg"
+ },
+ {
+  "name": "mistral-ai",
+  "title": "Mistral AI",
+  "file": "mistral-ai.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Mistral_AI_logo_(2025–).svg"
+ },
+ {
+  "name": "cohere",
+  "title": "Cohere",
+  "file": "cohere.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Cohere-Logo.png"
+ },
+ {
+  "name": "hugging-face",
+  "title": "Hugging Face",
+  "file": "hugging-face.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Hf-logo-with-title.svg"
+ },
+ {
+  "name": "perplexity",
+  "title": "Perplexity",
+  "file": "perplexity.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Perplexity_AI_logo.svg"
+ },
+ {
+  "name": "deepseek",
+  "title": "DeepSeek",
+  "file": "deepseek.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:DeepSeek_logo.svg"
+ },
+ {
+  "name": "google-deepmind",
+  "title": "Google DeepMind",
+  "file": "google-deepmind.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:DeepMind_new_logo.svg"
+ },
+ {
+  "name": "coreweave",
+  "title": "CoreWeave",
+  "file": "coreweave.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:CoreWeave_logo.svg"
+ },
+ {
+  "name": "scale-ai",
+  "title": "Scale AI",
+  "file": "scale-ai.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Scale_AI.svg"
+ },
+ {
+  "name": "databricks",
+  "title": "Databricks",
+  "file": "databricks.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Databricks_Logo.png"
+ },
+ {
+  "name": "snowflake",
+  "title": "Snowflake",
+  "file": "snowflake.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Snowflake_Logo.svg"
+ },
+ {
+  "name": "groq",
+  "title": "Groq",
+  "file": "groq.png",
+  "category": "AI companies",
+  "tags": [
+   "AI companies"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Groq_logo.svg"
+ },
+ {
+  "name": "marvell",
+  "title": "Marvell",
+  "file": "marvell.png",
+  "category": "Semiconductors",
+  "tags": [
+   "Semiconductors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Marvell_Logo.svg"
+ },
+ {
+  "name": "mediatek",
+  "title": "MediaTek",
+  "file": "mediatek.png",
+  "category": "Semiconductors",
+  "tags": [
+   "Semiconductors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:MediaTek_logo.svg"
+ },
+ {
+  "name": "arm",
+  "title": "Arm",
+  "file": "arm.png",
+  "category": "Semiconductors",
+  "tags": [
+   "Semiconductors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Arm_logo_2025.svg"
+ },
+ {
+  "name": "amd",
+  "title": "AMD",
+  "file": "amd.png",
+  "category": "Semiconductors",
+  "tags": [
+   "Semiconductors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:AMD_Logo.svg"
+ },
+ {
+  "name": "micron",
+  "title": "Micron",
+  "file": "micron.png",
+  "category": "Semiconductors",
+  "tags": [
+   "Semiconductors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Micron_Technology_logo.svg"
+ },
+ {
+  "name": "tsmc",
+  "title": "TSMC",
+  "file": "tsmc.png",
+  "category": "Semiconductors",
+  "tags": [
+   "Semiconductors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:TSMC_wordmark.svg"
+ },
+ {
+  "name": "sk-hynix",
+  "title": "SK hynix",
+  "file": "sk-hynix.png",
+  "category": "Semiconductors",
+  "tags": [
+   "Semiconductors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Hynix-Logo.svg"
+ },
+ {
+  "name": "juniper-networks",
+  "title": "Juniper Networks",
+  "file": "juniper-networks.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Juniper_Networks_logo.svg"
+ },
+ {
+  "name": "arista",
+  "title": "Arista",
+  "file": "arista.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Arista-networks-logo.svg"
+ },
+ {
+  "name": "infinera",
+  "title": "Infinera",
+  "file": "infinera.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Infinera_Logo.png"
+ },
+ {
+  "name": "adtran",
+  "title": "Adtran",
+  "file": "adtran.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Adtran_Logo_2022.svg"
+ },
+ {
+  "name": "airspan",
+  "title": "Airspan",
+  "file": "airspan.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Airspan_Networks_full_logo.svg"
+ },
+ {
+  "name": "viavi",
+  "title": "Viavi",
+  "file": "viavi.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:VIAVI_Solutions_logo.svg"
+ },
+ {
+  "name": "spirent",
+  "title": "Spirent",
+  "file": "spirent.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:RGB_Spirent_logo_TM_Digital_Blue.svg"
+ },
+ {
+  "name": "kontron",
+  "title": "Kontron",
+  "file": "kontron.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Kontron_logo.svg"
+ },
+ {
+  "name": "ceragon",
+  "title": "Ceragon",
+  "file": "ceragon.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Ceragon_logo.svg"
+ },
+ {
+  "name": "ubiquiti",
+  "title": "Ubiquiti",
+  "file": "ubiquiti.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Ubiquiti_Logo_2023.svg"
+ },
+ {
+  "name": "extreme-networks",
+  "title": "Extreme Networks",
+  "file": "extreme-networks.png",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Extreme_Networks_logo_-_new.png"
+ },
+ {
+  "name": "nutanix",
+  "title": "Nutanix",
+  "file": "nutanix.png",
+  "category": "ISVs & network function vendors",
+  "tags": [
+   "ISVs & network function vendors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:NutanixLogo.png"
+ },
+ {
+  "name": "capgemini",
+  "title": "Capgemini",
+  "file": "capgemini.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Capgemini_201x_logo.svg"
+ },
+ {
+  "name": "infosys",
+  "title": "Infosys",
+  "file": "infosys.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Infosys_logo.svg"
+ },
+ {
+  "name": "hcltech",
+  "title": "HCLTech",
+  "file": "hcltech.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:HCLTech-new-logo.svg"
+ },
+ {
+  "name": "tcs",
+  "title": "TCS",
+  "file": "tcs.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Tcs-logo-1.svg"
+ },
+ {
+  "name": "deloitte",
+  "title": "Deloitte",
+  "file": "deloitte.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Logo_of_Deloitte.svg"
+ },
+ {
+  "name": "kpmg",
+  "title": "KPMG",
+  "file": "kpmg.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:KPMG_blue_logo.svg"
+ },
+ {
+  "name": "mckinsey",
+  "title": "McKinsey",
+  "file": "mckinsey.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:McKinsey_Script_Mark_2019.svg"
+ },
+ {
+  "name": "bcg",
+  "title": "BCG",
+  "file": "bcg.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:BCG_Corporate_Logo.svg"
+ },
+ {
+  "name": "bain",
+  "title": "Bain",
+  "file": "bain.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Bain_&_Company_logo.svg"
+ },
+ {
+  "name": "kyndryl",
+  "title": "Kyndryl",
+  "file": "kyndryl.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Kyndryl_logo.svg"
+ },
+ {
+  "name": "dxc-technology",
+  "title": "DXC Technology",
+  "file": "dxc-technology.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:DXC-Logo-2025.svg"
+ },
+ {
+  "name": "palo-alto-networks",
+  "title": "Palo Alto Networks",
+  "file": "palo-alto-networks.png",
+  "category": "Cybersecurity",
+  "tags": [
+   "Cybersecurity"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:PaloAltoNetworks_2020_Logo.svg"
+ },
+ {
+  "name": "crowdstrike",
+  "title": "CrowdStrike",
+  "file": "crowdstrike.png",
+  "category": "Cybersecurity",
+  "tags": [
+   "Cybersecurity"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:CrowdStrike_logo.svg"
+ },
+ {
+  "name": "check-point",
+  "title": "Check Point",
+  "file": "check-point.png",
+  "category": "Cybersecurity",
+  "tags": [
+   "Cybersecurity"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Check_Point_logo_2022.svg"
+ },
+ {
+  "name": "thales",
+  "title": "Thales",
+  "file": "thales.png",
+  "category": "Cybersecurity",
+  "tags": [
+   "Cybersecurity"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Thales_Logo.svg"
+ },
+ {
+  "name": "cloudflare",
+  "title": "Cloudflare",
+  "file": "cloudflare.png",
+  "category": "Cybersecurity",
+  "tags": [
+   "Cybersecurity"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Cloudflare_Logo.svg"
+ },
+ {
+  "name": "gsma",
+  "title": "GSMA",
+  "file": "gsma.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:GSMA_logo.svg"
+ },
+ {
+  "name": "tm-forum",
+  "title": "TM Forum",
+  "file": "tm-forum.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:TM_Forum_Logo.png"
+ },
+ {
+  "name": "linux-foundation",
+  "title": "Linux Foundation",
+  "file": "linux-foundation.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Linux_Foundation_logo_2013.svg"
+ },
+ {
+  "name": "wi-fi-alliance",
+  "title": "Wi-Fi Alliance",
+  "file": "wi-fi-alliance.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Wi-FI_Alliance_Logo.png"
+ },
+ {
+  "name": "itu",
+  "title": "ITU",
+  "file": "itu.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:International_Telecommunication_Union_logo.svg"
+ },
+ {
+  "name": "ofcom",
+  "title": "Ofcom",
+  "file": "ofcom.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Logo_of_Ofcom_(2004).svg"
+ },
+ {
+  "name": "fcc",
+  "title": "FCC",
+  "file": "fcc.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:FCC_New_Logo.svg"
+ },
+ {
+  "name": "berec",
+  "title": "BEREC",
+  "file": "berec.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:BEREC_logo_2010.svg"
+ },
+ {
+  "name": "digi",
+  "title": "Digi",
+  "file": "digi.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Digi_2024_Logo.svg"
+ },
+ {
+  "name": "windtre",
+  "title": "WindTre",
+  "file": "windtre.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Wind_Tre_logo_2020.svg"
+ },
+ {
+  "name": "tele2",
+  "title": "Tele2",
+  "file": "tele2.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Tele2_logo_until_2007.svg"
+ },
+ {
+  "name": "sfr",
+  "title": "SFR",
+  "file": "sfr.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:SFR-2022-logo.svg"
+ },
+ {
+  "name": "o2-telefonica",
+  "title": "O2 Telefónica",
+  "file": "o2-telefonica.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Telefónica_Deutschland_2021_logo_(2).svg"
+ },
+ {
+  "name": "magyar-telekom",
+  "title": "Magyar Telekom",
+  "file": "magyar-telekom.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Deutsche_Telekom_2022.svg"
+ },
+ {
+  "name": "sasktel",
+  "title": "SaskTel",
+  "file": "sasktel.png",
+  "category": "Telecom operators: North America",
+  "tags": [
+   "Telecom operators: North America"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:SaskTel_Logo.svg"
+ },
+ {
+  "name": "videotron",
+  "title": "Vidéotron",
+  "file": "videotron.png",
+  "category": "Telecom operators: North America",
+  "tags": [
+   "Telecom operators: North America"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Vidéotron_logo.png"
+ },
+ {
+  "name": "entel",
+  "title": "Entel",
+  "file": "entel.png",
+  "category": "Telecom operators: LATAM",
+  "tags": [
+   "Telecom operators: LATAM"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:EntelChile_Logo.svg"
+ },
+ {
+  "name": "spark",
+  "title": "Spark",
+  "file": "spark.png",
+  "category": "Telecom operators: APAC",
+  "tags": [
+   "Telecom operators: APAC"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Spark_NZ_logo.png"
+ },
+ {
+  "name": "azercell",
+  "title": "Azercell",
+  "file": "azercell.png",
+  "category": "Telecom operators: APAC",
+  "tags": [
+   "Telecom operators: APAC"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Azercell_logo.svg"
+ },
+ {
+  "name": "iridium",
+  "title": "Iridium",
+  "file": "iridium.png",
+  "category": "Satellite & NTN operators",
+  "tags": [
+   "Satellite & NTN operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Iridium-Logo.svg"
+ },
+ {
+  "name": "inmarsat",
+  "title": "Inmarsat",
+  "file": "inmarsat.png",
+  "category": "Satellite & NTN operators",
+  "tags": [
+   "Satellite & NTN operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Inmarsat.png"
+ },
+ {
+  "name": "hughes",
+  "title": "Hughes",
+  "file": "hughes.png",
+  "category": "Satellite & NTN operators",
+  "tags": [
+   "Satellite & NTN operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Hughes_Communications_logo.svg"
+ },
+ {
+  "name": "akamai",
+  "title": "Akamai",
+  "file": "akamai.png",
+  "category": "Hyperscalers & content providers",
+  "tags": [
+   "Hyperscalers & content providers"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Akamai-2025.svg"
+ },
+ {
+  "name": "digitalocean",
+  "title": "DigitalOcean",
+  "file": "digitalocean.png",
+  "category": "Hyperscalers & content providers",
+  "tags": [
+   "Hyperscalers & content providers"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:DigitalOcean_logo.svg"
+ },
+ {
+  "name": "schneider-electric",
+  "title": "Schneider Electric",
+  "file": "schneider-electric.png",
+  "category": "Data centre power & cooling vendors",
+  "tags": [
+   "Data centre power & cooling vendors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Schneider_Electric_2007.svg"
+ },
+ {
+  "name": "vertiv",
+  "title": "Vertiv",
+  "file": "vertiv.png",
+  "category": "Data centre power & cooling vendors",
+  "tags": [
+   "Data centre power & cooling vendors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Vertiv_logo.svg"
+ },
+ {
+  "name": "eaton",
+  "title": "Eaton",
+  "file": "eaton.png",
+  "category": "Data centre power & cooling vendors",
+  "tags": [
+   "Data centre power & cooling vendors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Eaton_Corporation_Logo.svg"
+ },
+ {
+  "name": "johnson-controls",
+  "title": "Johnson Controls",
+  "file": "johnson-controls.png",
+  "category": "Data centre power & cooling vendors",
+  "tags": [
+   "Data centre power & cooling vendors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Johnson_Controls_old_logo.svg"
+ },
+ {
+  "name": "abb",
+  "title": "ABB",
+  "file": "abb.png",
+  "category": "Data centre power & cooling vendors",
+  "tags": [
+   "Data centre power & cooling vendors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:ABB_logo.svg"
+ },
+ {
+  "name": "siemens",
+  "title": "Siemens",
+  "file": "siemens.png",
+  "category": "Data centre power & cooling vendors",
+  "tags": [
+   "Data centre power & cooling vendors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Siemens_AG_logo.svg"
+ },
+ {
+  "name": "bosch",
+  "title": "Bosch",
+  "file": "bosch.png",
+  "category": "Data centre power & cooling vendors",
+  "tags": [
+   "Data centre power & cooling vendors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Bosch-logo.svg"
+ },
+ {
+  "name": "twilio",
+  "title": "Twilio",
+  "file": "twilio.png",
+  "category": "CPaaS & communications platforms",
+  "tags": [
+   "CPaaS & communications platforms"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Twilio-logo-red.svg"
+ },
+ {
+  "name": "vonage",
+  "title": "Vonage",
+  "file": "vonage.png",
+  "category": "CPaaS & communications platforms",
+  "tags": [
+   "CPaaS & communications platforms"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Vonage_Logo.svg"
+ },
+ {
+  "name": "infobip",
+  "title": "Infobip",
+  "file": "infobip.png",
+  "category": "CPaaS & communications platforms",
+  "tags": [
+   "CPaaS & communications platforms"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Infobip.svg"
+ },
+ {
+  "name": "bandwidth",
+  "title": "Bandwidth",
+  "file": "bandwidth.png",
+  "category": "CPaaS & communications platforms",
+  "tags": [
+   "CPaaS & communications platforms"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Bandwidth_Logo.png"
+ },
+ {
+  "name": "zoom",
+  "title": "Zoom",
+  "file": "zoom.png",
+  "category": "CPaaS & communications platforms",
+  "tags": [
+   "CPaaS & communications platforms"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Zoom_Communications_Logo.svg"
+ },
+ {
+  "name": "ntt",
+  "title": "NTT",
+  "file": "ntt.png",
+  "category": "Telecom operators: APAC",
+  "tags": [
+   "Telecom operators: APAC"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:NTT_2025.svg"
+ },
+ {
+  "name": "telekom-malaysia",
+  "title": "Telekom Malaysia",
+  "file": "telekom-malaysia.png",
+  "category": "Telecom operators: APAC",
+  "tags": [
+   "Telecom operators: APAC"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Telekom_Malaysia_logo_(2023).svg"
+ },
+ {
+  "name": "mobifone",
+  "title": "MobiFone",
+  "file": "mobifone.png",
+  "category": "Telecom operators: APAC",
+  "tags": [
+   "Telecom operators: APAC"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:MobiFone_logo.svg"
+ },
+ {
+  "name": "smartfren",
+  "title": "Smartfren",
+  "file": "smartfren.png",
+  "category": "Telecom operators: APAC",
+  "tags": [
+   "Telecom operators: APAC"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Smartfren_(2019).svg"
+ },
+ {
+  "name": "maroc-telecom",
+  "title": "Maroc Telecom",
+  "file": "maroc-telecom.png",
+  "category": "Telecom operators: MEA",
+  "tags": [
+   "Telecom operators: MEA"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Maroc_Telecom_logo.png"
+ },
+ {
+  "name": "telkom",
+  "title": "Telkom",
+  "file": "telkom.png",
+  "category": "Telecom operators: MEA",
+  "tags": [
+   "Telecom operators: MEA"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:TelkomSA.svg"
+ },
+ {
+  "name": "cell-c",
+  "title": "Cell C",
+  "file": "cell-c.png",
+  "category": "Telecom operators: MEA",
+  "tags": [
+   "Telecom operators: MEA"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Cell_C_New_2024_logo.svg"
+ },
+ {
+  "name": "movistar",
+  "title": "Movistar",
+  "file": "movistar.png",
+  "category": "Telecom operators: LATAM",
+  "tags": [
+   "Telecom operators: LATAM"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Movistar_isotype_2025.png"
+ },
+ {
+  "name": "cogeco",
+  "title": "Cogeco",
+  "file": "cogeco.png",
+  "category": "Telecom operators: North America",
+  "tags": [
+   "Telecom operators: North America"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Cogeco_logo.svg"
+ },
+ {
+  "name": "sky",
+  "title": "Sky",
+  "file": "sky.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:SKY_Basic_Logo.svg"
+ },
+ {
+  "name": "telekom-srbija",
+  "title": "Telekom Srbija",
+  "file": "telekom-srbija.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:2020_Телеком_Србија_лого.png"
+ },
+ {
+  "name": "orange-belgium",
+  "title": "Orange Belgium",
+  "file": "orange-belgium.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Orange_logo.svg"
+ },
+ {
+  "name": "maxar",
+  "title": "Maxar",
+  "file": "maxar.png",
+  "category": "Satellite & NTN operators",
+  "tags": [
+   "Satellite & NTN operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Maxar_yellow_logo.svg"
+ },
+ {
+  "name": "planet",
+  "title": "Planet",
+  "file": "planet.png",
+  "category": "Satellite & NTN operators",
+  "tags": [
+   "Satellite & NTN operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Planet_Labs_logo.svg"
+ },
+ {
+  "name": "rocket-lab",
+  "title": "Rocket Lab",
+  "file": "rocket-lab.png",
+  "category": "Satellite & NTN operators",
+  "tags": [
+   "Satellite & NTN operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Rocket_Lab_logo.svg"
+ },
+ {
+  "name": "gilat",
+  "title": "Gilat",
+  "file": "gilat.png",
+  "category": "Satellite & NTN operators",
+  "tags": [
+   "Satellite & NTN operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Gilat_logo.svg"
+ },
+ {
+  "name": "blue-origin",
+  "title": "Blue Origin",
+  "file": "blue-origin.png",
+  "category": "Satellite & NTN operators",
+  "tags": [
+   "Satellite & NTN operators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Blue_Origin_new_logo.svg"
+ },
+ {
+  "name": "radisys",
+  "title": "Radisys",
+  "file": "radisys.jpg",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Radisys_logo.jpg"
  }
 ]

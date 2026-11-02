@@ -5,16 +5,19 @@ A PowerPoint add-in for STL Partners, replacing the Noun Project subscription. I
 
 - **STL sections**: curated sets for Telco & mobile, Networks, Data centres, Cloud & edge, AI & data,
   Enterprise & industries, Sustainability & energy, Business & strategy, and Companies & logos
-- **STL originals**: 40 icons drawn for STL topics the open libraries don't cover (RAN, Open RAN, small cell,
-  5G to 6G, network slicing, MEC, WAN/LAN, network APIs, managed service, hyperscale/edge data centres, colocation,
-  liquid cooling, subsea cable, NTN/D2D satellite, ground station, telco AI, AI factory…)
-- **Logos**: 165 full-colour company logos from the STL slide templates (operators by region, hyperscalers, NEPs,
-  OEMs, OSVs, SIs, BSS/OSS, ISVs, satellite operators), inserted as pictures at their own proportions
+- **STL originals**: 152 icons drawn for STL topics the open libraries don't cover, guided by the STL research
+  agenda: RAN/Open RAN/vRAN/AI-RAN, 5G-Advanced/6G, slicing, NaaS, APIs, CPaaS, autonomous networks, data centres
+  (DCI, cooling, power, heat reuse, rack density), AI (GenAI, LLMs, agents, inference), verticals, consumer services,
+  and strategy concepts (infraco/techco/servco, M&A, ARPU, capex, market sizing…)
+- **Logos**: 278 full-colour company logos: 165 from the STL slide templates, plus 113 freely licensed logos from
+  Wikimedia Commons (towercos, data centre operators and vendors, AI companies, chips, cybersecurity, CPaaS,
+  industry bodies, more operators). Each web logo's source file is recorded in `app/logos/logos.json`
 - **STL colours by default**: navy, orange, red and grey swatches, plus the house style of a white icon on a coloured circle or square
 - **Search that knows STL language**: British spellings ("data centre", "fibre") and shorthand ("dc", "ran", "mno", "genai")
 - **Vector insertion**: icons go into PowerPoint as SVG, so they stay sharp and can be recoloured or converted to shapes
 - Favourites, recently used, and Copy / SVG / PNG download for use outside PowerPoint
-- Search across 94,000+ icons in 106 open-source libraries (tick "All libraries")
+- Search across 94,000+ icons in 106 open-source libraries (on by default; the first search takes a few seconds)
+- Settings (gear icon): insert size (default X-Large), vector or picture, and whether search covers all libraries
 
 ## Folder layout
 

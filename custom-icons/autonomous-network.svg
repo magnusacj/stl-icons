@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+     data-title="Autonomous network"
+     data-tags="autonomous network, self-driving network, level 4, closed loop, ai ops, self healing">
+  <circle cx="12" cy="8.5" r="1.5"/><circle cx="8.5" cy="14.5" r="1.5"/><circle cx="15.5" cy="14.5" r="1.5"/><path d="M11.24 9.8L9.26 13.2M12.76 9.8L14.74 13.2M10 14.5L14 14.5"/><path d="M20 12a8 8 0 0 1-13.7 5.7M4 12a8 8 0 0 1 13.7-5.7M17.7 3.3v3h-3M6.3 20.7v-3h3"/>
+</svg>
