@@ -27,14 +27,12 @@
         const c = config();
         if (!c) return false;
         try {
+            const headers = { apikey: c.anonKey, 'Content-Type': 'application/json', Prefer: 'return=minimal' };
+            // Legacy JWT anon keys also go in Authorization; new sb_publishable_ keys must not
+            if (!c.anonKey.startsWith('sb_')) headers.Authorization = `Bearer ${c.anonKey}`;
             const res = await fetch(`${c.url.replace(/\/$/, '')}/rest/v1/${table}`, {
                 method: 'POST',
-                headers: {
-                    apikey: c.anonKey,
-                    Authorization: `Bearer ${c.anonKey}`,
-                    'Content-Type': 'application/json',
-                    Prefer: 'return=minimal'
-                },
+                headers,
                 body: JSON.stringify(rows)
             });
             return res.ok;

@@ -6,6 +6,6 @@
  * Leave them empty and feedback is kept on each PC and sent once they are filled in.
  */
 window.STL_FEEDBACK_CONFIG = {
-    url: '',      // e.g. 'https://abcdefgh.supabase.co'
-    anonKey: ''   // the "anon public" key
+    url: 'https://zatjuhainewxjnfhwbxm.supabase.co',
+    anonKey: 'sb_publishable_Vc5KRqnDghtj9KEhTK1kYw_Wmnt4x5b'   // publishable (public) key: can only add rows
 };
