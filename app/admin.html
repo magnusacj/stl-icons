@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STL Icons dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="vendor/supabase-js-2.45.4.js"></script>
 <script src="config.js"></script>
 <style>
   :root { --navy: #282f4c; --orange: #f39100; --red: #e2051c; --grey: #5e6378; --light: #f4f4f4; --border: #e1e3e8; }
@@ -42,6 +42,12 @@
   <button id="signOut" class="btn hidden">Sign out</button>
 </header>
 <main>
+  <div id="problem" class="card hidden">
+    <h2>Something went wrong</h2>
+    <p id="problemText" class="row zero"></p>
+    <p class="row muted">Try reloading the page (Ctrl+F5). If it keeps happening, send a screenshot of this message.</p>
+  </div>
+
   <div id="notConfigured" class="card hidden">
     <h2>Not connected yet</h2>
     <p class="row">Fill in the Supabase address and public key in <code>app/config.js</code>, then publish.</p>
@@ -70,12 +76,20 @@
 
 <script>
 const cfg = window.STL_FEEDBACK_CONFIG || {};
+function problem(message) {
+    document.getElementById('problemText').textContent = message;
+    document.getElementById('problem').classList.remove('hidden');
+}
+window.addEventListener('error', e => problem(e.message || 'The page could not start.'));
+window.addEventListener('unhandledrejection', e => problem((e.reason && e.reason.message) || String(e.reason)));
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const date = s => s ? new Date(s).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' }) : '';
 const show = (id, on) => document.getElementById(id).classList.toggle('hidden', !on);
 const KIND_LABEL = { request: 'Request', no_results: 'Nothing found', remove: 'Remove icon' };
 
-if (!cfg.url || !cfg.anonKey) {
+if (typeof window.supabase === 'undefined') {
+    problem('The sign-in library did not load. A browser extension or network filter may be blocking it.');
+} else if (!cfg.url || !cfg.anonKey) {
     show('notConfigured', true);
 } else {
     const db = supabase.createClient(cfg.url, cfg.anonKey);
