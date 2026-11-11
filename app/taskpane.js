@@ -262,6 +262,28 @@ function setupEventListeners() {
     grid.addEventListener('click', (e) => {
         if (e.target.closest('#nothingFoundBtn')) openFeedback('no_results');
     });
+
+    // Instant name label on hover (the browser's own tooltip waits about a second)
+    const tooltip = document.getElementById('iconTooltip');
+    grid.addEventListener('mouseover', (e) => {
+        const cell = e.target.closest('.icon-item');
+        if (!cell || !cell.dataset.label) return;
+        tooltip.textContent = cell.dataset.label;
+        tooltip.classList.remove('hidden');
+        const r = cell.getBoundingClientRect();
+        const t = tooltip.getBoundingClientRect();
+        const left = Math.max(4, Math.min(r.left + r.width / 2 - t.width / 2, window.innerWidth - t.width - 4));
+        const top = r.top - t.height - 6 >= 0 ? r.top - t.height - 6 : r.bottom + 6;
+        tooltip.style.left = left + 'px';
+        tooltip.style.top = top + 'px';
+    });
+    grid.addEventListener('mouseout', (e) => {
+        if (!e.relatedTarget || !e.relatedTarget.closest || e.relatedTarget.closest('.icon-item') !== e.target.closest('.icon-item')) {
+            tooltip.classList.add('hidden');
+        }
+    });
+    grid.addEventListener('scroll', () => tooltip.classList.add('hidden'));
+
     grid.addEventListener('contextmenu', (e) => {
         const cell = e.target.closest('.icon-item');
         if (!cell) return;
@@ -826,12 +848,12 @@ function renderGrid() {
             const label = `${icon.title || icon.name} · ${libraryName(entry.lib)}`;
             const selected = key === selectedKey ? ' selected' : '';
             if (icon.image) {
-                html += `<div class="icon-item logo${icon.dark ? ' on-dark' : ''}${selected}" data-key="${key}" title="${escapeHtml(label)}">` +
+                html += `<div class="icon-item logo${icon.dark ? ' on-dark' : ''}${selected}" data-key="${key}" data-label="${escapeHtml(label)}" aria-label="${escapeHtml(label)}">` +
                     `<img src="${icon.image}" alt="${escapeHtml(icon.title)}" loading="lazy"></div>`;
             } else {
                 const svg = buildSvg(entry, 48);
                 if (!svg) continue;
-                html += `<div class="${cellClass}${selected}" data-key="${key}" title="${escapeHtml(label)}">` +
+                html += `<div class="${cellClass}${selected}" data-key="${key}" data-label="${escapeHtml(label)}" aria-label="${escapeHtml(label)}">` +
                     `${svg}${entry.lib === 'stl' ? '<span class="stl-badge">★</span>' : ''}</div>`;
             }
             shown++;
