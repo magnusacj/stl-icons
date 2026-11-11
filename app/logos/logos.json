@@ -2634,5 +2634,278 @@
    "Network equipment providers (NEPs)"
   ],
   "source": "https://commons.wikimedia.org/wiki/File:Radisys_logo.jpg"
+ },
+ {
+  "name": "a10-networks",
+  "title": "A10 Networks",
+  "file": "a10-networks.jpg",
+  "category": "Network equipment providers (NEPs)",
+  "tags": [
+   "Network equipment providers (NEPs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:A10Networkslogo2020.jpg"
+ },
+ {
+  "name": "analog-devices",
+  "title": "Analog Devices",
+  "file": "analog-devices.png",
+  "category": "Semiconductors",
+  "tags": [
+   "Semiconductors"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Analog_Devices_Logo.svg"
+ },
+ {
+  "name": "bitdefender",
+  "title": "Bitdefender",
+  "file": "bitdefender.png",
+  "category": "Cybersecurity",
+  "tags": [
+   "Cybersecurity"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:BitdefenderLogoBlue.svg"
+ },
+ {
+  "name": "broadband-forum",
+  "title": "Broadband Forum",
+  "file": "broadband-forum.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://www.broadband-forum.org/"
+ },
+ {
+  "name": "cablelabs",
+  "title": "CableLabs",
+  "file": "cablelabs.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Cable_Labs_logo.svg"
+ },
+ {
+  "name": "cartesian",
+  "title": "Cartesian",
+  "file": "cartesian.jpg",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://www.cartesian.com/"
+ },
+ {
+  "name": "celfocus",
+  "title": "Celfocus",
+  "file": "celfocus.svg",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://www.celfocus.com/"
+ },
+ {
+  "name": "comviva",
+  "title": "Comviva",
+  "file": "comviva.svg",
+  "category": "BSS/OSS",
+  "tags": [
+   "BSS/OSS"
+  ],
+  "source": "https://www.comviva.com/"
+ },
+ {
+  "name": "cyta",
+  "title": "CYTA",
+  "file": "cyta.png",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://www.cyta.com.cy/personal/el"
+ },
+ {
+  "name": "digital-catapult",
+  "title": "Digital Catapult",
+  "file": "digital-catapult.webp",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://www.digicatapult.org.uk/"
+ },
+ {
+  "name": "digital-space",
+  "title": "Digital Space",
+  "file": "digital-space.svg",
+  "category": "Data centre operators",
+  "tags": [
+   "Data centre operators"
+  ],
+  "source": "https://digitalspace.co.uk"
+ },
+ {
+  "name": "enghouse",
+  "title": "Enghouse",
+  "file": "enghouse.svg",
+  "category": "ISVs & network function vendors",
+  "tags": [
+   "ISVs & network function vendors"
+  ],
+  "source": "https://www.enghouse.com/"
+ },
+ {
+  "name": "european-commission",
+  "title": "European Commission",
+  "file": "european-commission.png",
+  "category": "Industry bodies & regulators",
+  "tags": [
+   "Industry bodies & regulators"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Europaeische_Kommission_logo.svg"
+ },
+ {
+  "name": "f-secure",
+  "title": "F-Secure",
+  "file": "f-secure.png",
+  "category": "Cybersecurity",
+  "tags": [
+   "Cybersecurity"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:F-Secure-logo-250x70.png"
+ },
+ {
+  "name": "freshwave",
+  "title": "Freshwave",
+  "file": "freshwave.svg",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://freshwavegroup.com"
+ },
+ {
+  "name": "iceotope",
+  "title": "Iceotope",
+  "file": "iceotope.svg",
+  "category": "Data centre power & cooling vendors",
+  "tags": [
+   "Data centre power & cooling vendors"
+  ],
+  "source": "https://www.iceotope.com/",
+  "dark": true
+ },
+ {
+  "name": "ocient",
+  "title": "Ocient",
+  "file": "ocient.png",
+  "category": "ISVs & network function vendors",
+  "tags": [
+   "ISVs & network function vendors"
+  ],
+  "source": "https://ocient.com"
+ },
+ {
+  "name": "openmind-networks",
+  "title": "Openmind Networks",
+  "file": "openmind-networks.svg",
+  "category": "ISVs & network function vendors",
+  "tags": [
+   "ISVs & network function vendors"
+  ],
+  "source": "https://www.openmindnetworks.com/"
+ },
+ {
+  "name": "strategy-and",
+  "title": "Strategy&",
+  "file": "strategy-and.png",
+  "category": "System integrators (SIs)",
+  "tags": [
+   "System integrators (SIs)"
+  ],
+  "source": "https://commons.wikimedia.org/wiki/File:Strategyand-logo-black.png"
+ },
+ {
+  "name": "suse",
+  "title": "SUSE",
+  "file": "suse.svg",
+  "category": "ISVs & network function vendors",
+  "tags": [
+   "ISVs & network function vendors"
+  ],
+  "source": "https://www.suse.com/"
+ },
+ {
+  "name": "tdc",
+  "title": "TDC",
+  "file": "tdc.svg",
+  "category": "Telecom operators: Europe",
+  "tags": [
+   "Telecom operators: Europe"
+  ],
+  "source": "https://tdc.dk/da"
+ },
+ {
+  "name": "telehouse",
+  "title": "Telehouse",
+  "file": "telehouse.svg",
+  "category": "Data centre operators",
+  "tags": [
+   "Data centre operators"
+  ],
+  "source": "https://www.telehouse.net/"
+ },
+ {
+  "name": "vitria",
+  "title": "Vitria",
+  "file": "vitria.webp",
+  "category": "ISVs & network function vendors",
+  "tags": [
+   "ISVs & network function vendors"
+  ],
+  "source": "https://vitria.com"
+ },
+ {
+  "name": "volt-active-data",
+  "title": "Volt Active Data",
+  "file": "volt-active-data.png",
+  "category": "ISVs & network function vendors",
+  "tags": [
+   "ISVs & network function vendors"
+  ],
+  "source": "https://www.voltactivedata.com/"
+ },
+ {
+  "name": "xconnect",
+  "title": "XConnect",
+  "file": "xconnect.svg",
+  "category": "CPaaS & communications platforms",
+  "tags": [
+   "CPaaS & communications platforms"
+  ],
+  "source": "https://www.xconnect.net/",
+  "dark": true
+ },
+ {
+  "name": "zededa",
+  "title": "Zededa",
+  "file": "zededa.svg",
+  "category": "ISVs & network function vendors",
+  "tags": [
+   "ISVs & network function vendors"
+  ],
+  "source": "https://zededa.com",
+  "dark": true
+ },
+ {
+  "name": "nexus-infrastructure",
+  "title": "Nexus Infrastructure",
+  "file": "nexus-infrastructure.svg",
+  "category": "Towers, fibre & infrastructure",
+  "tags": [
+   "Towers, fibre & infrastructure"
+  ],
+  "source": "https://www.nexus-infrastructure.com/"
  }
 ]
