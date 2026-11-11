@@ -27,6 +27,7 @@
                 <span class="logo-divider" aria-hidden="true"></span>
                 <span class="logo-text">Icons</span>
             </h1>
+            <button id="requestButton" class="request-button" title="Ask for an icon or logo we don't have">Request</button>
             <button id="settingsButton" class="icon-button" title="Settings" aria-label="Settings" aria-expanded="false" aria-controls="settingsPanel">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="3"/>
@@ -94,7 +95,10 @@
         <!-- Main Content -->
         <div class="main-content">
             <aside class="sidebar" id="sidebar">
-                <div class="sidebar-header">STL sections</div>
+                <div class="sidebar-header">
+                    <span>STL sections</span>
+                    <button id="closeSidebar" class="close-btn" title="Close sections" aria-label="Close sections">&times;</button>
+                </div>
                 <div id="collectionList" class="library-list"></div>
                 <button id="librariesHeader" class="sidebar-header sidebar-toggle" aria-expanded="false">
                     <span>All libraries</span>
@@ -136,18 +140,43 @@
                     </div>
                     <div class="detail-actions">
                         <button id="favBtn" class="action-btn" title="Add to favourites" aria-label="Favourite">☆</button>
+                        <button id="upBtn" class="action-btn" title="Good icon" aria-label="Thumbs up">👍</button>
+                        <button id="downBtn" class="action-btn" title="Not a good icon" aria-label="Thumbs down">👎</button>
+                        <button id="flagBtn" class="action-btn" title="Suggest removing this icon" aria-label="Suggest removing">🚩</button>
                         <button id="insertBtn" class="action-btn primary office-only" title="Insert on the current slide">Insert</button>
-                        <button id="copyBtn" class="action-btn" title="Copy as a picture, then paste anywhere">Copy</button>
-                        <button id="svgBtn" class="action-btn" title="Download SVG">SVG</button>
-                        <button id="pngBtn" class="action-btn" title="Download PNG">PNG</button>
                     </div>
                 </div>
             </main>
         </div>
 
+        <!-- Right-click menu on an icon -->
+        <div id="contextMenu" class="context-menu hidden" role="menu">
+            <button data-action="insert" class="office-only" role="menuitem">Insert</button>
+            <button data-action="up" role="menuitem">👍 Good icon</button>
+            <button data-action="down" role="menuitem">👎 Not good</button>
+            <button data-action="favourite" role="menuitem">☆ Add to favourites</button>
+            <button data-action="flag" role="menuitem">🚩 Suggest removing…</button>
+        </div>
+
+        <!-- Feedback / request form -->
+        <div id="feedbackDialog" class="dialog-backdrop hidden">
+            <form id="feedbackForm" class="dialog" role="dialog" aria-modal="true" aria-labelledby="feedbackTitle">
+                <h2 id="feedbackTitle">Request an icon</h2>
+                <p id="feedbackIntro" class="dialog-intro"></p>
+                <textarea id="feedbackMessage" rows="4" placeholder=""></textarea>
+                <input id="feedbackName" type="text" placeholder="Your name (optional)" autocomplete="name">
+                <div class="dialog-actions">
+                    <button type="button" id="feedbackCancel" class="action-btn">Cancel</button>
+                    <button type="submit" class="action-btn primary">Send</button>
+                </div>
+            </form>
+        </div>
+
         <div id="toast" class="toast" role="status"></div>
     </div>
 
+    <script src="config.js"></script>
+    <script src="feedback.js"></script>
     <script src="collections.js"></script>
     <script src="taskpane.js"></script>
 </body>

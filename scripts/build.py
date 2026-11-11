@@ -61,7 +61,8 @@ def build_logos():
             print(f"  missing image for logo {logo['name']}: {logo['file']}")
             continue
         icons.append({'name': logo['name'], 'title': logo['title'], 'tags': logo.get('tags', []),
-                      'category': logo.get('category', ''), 'image': 'logos/' + logo['file']})
+                      'category': logo.get('category', ''), 'image': 'logos/' + logo['file'],
+                      **({'dark': True} if logo.get('dark') else {})})
     manifest = {'id': 'stllogos', 'name': 'STL logos', 'version': '1.0.0',
                 'totalIcons': len(icons), 'icons': icons}
     (MANIFEST_DIR / 'stllogos.json').write_text(json.dumps(manifest, ensure_ascii=False, separators=(',', ':')),

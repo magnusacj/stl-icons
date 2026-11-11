@@ -259,11 +259,37 @@ function setupEventListeners() {
         if (inOffice) insertEntry(entry, cell);
     });
 
+    grid.addEventListener('click', (e) => {
+        if (e.target.closest('#nothingFoundBtn')) openFeedback('no_results');
+    });
+    grid.addEventListener('contextmenu', (e) => {
+        const cell = e.target.closest('.icon-item');
+        if (!cell) return;
+        e.preventDefault();
+        selectEntry(entryFromKey(cell.dataset.key));
+        showContextMenu(e.clientX, e.clientY);
+    });
+    document.getElementById('contextMenu').addEventListener('click', (e) => {
+        const action = e.target.closest('button')?.dataset.action;
+        hideContextMenu();
+        if (!action || !state.selected) return;
+        if (action === 'insert') insertEntry(state.selected);
+        else if (action === 'favourite') toggleFavourite();
+        else if (action === 'up' || action === 'down') vote(action);
+        else if (action === 'flag') openFeedback('remove');
+    });
+    document.addEventListener('click', (e) => { if (!e.target.closest('#contextMenu')) hideContextMenu(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { hideContextMenu(); closeFeedback(); } });
+
     document.getElementById('insertBtn').addEventListener('click', () => state.selected && insertEntry(state.selected));
-    document.getElementById('copyBtn').addEventListener('click', () => state.selected && copyEntry(state.selected));
-    document.getElementById('svgBtn').addEventListener('click', () => state.selected && downloadEntry(state.selected, 'svg'));
-    document.getElementById('pngBtn').addEventListener('click', () => state.selected && downloadEntry(state.selected, 'png'));
     document.getElementById('favBtn').addEventListener('click', toggleFavourite);
+    document.getElementById('upBtn').addEventListener('click', () => vote('up'));
+    document.getElementById('downBtn').addEventListener('click', () => vote('down'));
+    document.getElementById('flagBtn').addEventListener('click', () => openFeedback('remove'));
+    document.getElementById('requestButton').addEventListener('click', () => openFeedback('request'));
+    document.getElementById('closeSidebar').addEventListener('click', () => document.body.classList.add('sidebar-collapsed'));
+    document.getElementById('feedbackCancel').addEventListener('click', closeFeedback);
+    document.getElementById('feedbackForm').addEventListener('submit', (e) => { e.preventDefault(); submitFeedback(); });
     document.getElementById('dismissTip').addEventListener('click', () => {
         store.set('designerTipDismissed', true);
         document.getElementById('designerTip').classList.add('hidden');
@@ -582,6 +608,12 @@ async function runSearch(query) {
     renderGrid();
     const total = stlHits.length + libHits.length;
     setTitle(`Search: “${query}”`, `${total} icons`, true);
+
+    // Count the search once the person stops typing (anonymous)
+    clearTimeout(runSearch.logTimer);
+    runSearch.logTimer = setTimeout(() => {
+        if (token === searchToken) window.STLFeedback.usage({ event: 'search', query, result_count: total });
+    }, 2000);
 }
 
 // ---------- SVG building ----------
@@ -794,7 +826,7 @@ function renderGrid() {
             const label = `${icon.title || icon.name} · ${libraryName(entry.lib)}`;
             const selected = key === selectedKey ? ' selected' : '';
             if (icon.image) {
-                html += `<div class="icon-item logo${selected}" data-key="${key}" title="${escapeHtml(label)}">` +
+                html += `<div class="icon-item logo${icon.dark ? ' on-dark' : ''}${selected}" data-key="${key}" title="${escapeHtml(label)}">` +
                     `<img src="${icon.image}" alt="${escapeHtml(icon.title)}" loading="lazy"></div>`;
             } else {
                 const svg = buildSvg(entry, 48);
@@ -811,6 +843,10 @@ function renderGrid() {
     }
     if (total > state.displayLimit) {
         html += `<div class="load-more-container"><button id="loadMoreBtn" class="load-more-btn">Show more (${total - state.displayLimit} remaining)</button></div>`;
+    }
+    const searching = document.getElementById('searchInput').value.trim() && !state.groups.some(g => g.loading);
+    if (searching) {
+        html += `<div class="nothing-found">Nothing suitable? <button id="nothingFoundBtn">Tell us what you need</button></div>`;
     }
     grid.innerHTML = html;
 }
@@ -854,12 +890,14 @@ function renderDetail() {
     const preview = document.getElementById('detailPreview');
     if (icon.image) {
         preview.innerHTML = `<img src="${icon.image}" alt="">`;
-        preview.style.background = '';
+        preview.style.background = icon.dark ? 'var(--stl-navy)' : '';
     } else {
         preview.innerHTML = buildSvg(entry, 40) || '';
         preview.style.background = state.shape === 'none' && isLight(state.color) ? '#5e6378' : '';
     }
-    document.getElementById('svgBtn').classList.toggle('hidden', !!icon.image);
+    const myVote = store.get('votes', {})[`${entry.lib}:${entry.name}`];
+    document.getElementById('upBtn').classList.toggle('voted', myVote === 'up');
+    document.getElementById('downBtn').classList.toggle('voted', myVote === 'down');
     document.getElementById('detailTitle').textContent = icon.title || icon.name;
     document.getElementById('detailSource').textContent = libraryName(entry.lib);
     const isFav = store.get('favourites', []).includes(`${entry.lib}:${entry.name}`);
@@ -910,7 +948,7 @@ function insertSize(entry) {
 
 async function insertEntry(entry, cell) {
     if (!inOffice) {
-        showToast('Open STL Icons inside PowerPoint to insert. Use Copy here instead.');
+        showToast('Open STL Icons inside PowerPoint to insert icons.');
         return;
     }
     if (cell) cell.classList.add('inserting');
@@ -934,6 +972,10 @@ async function insertEntry(entry, cell) {
         }
         rememberRecent(entry);
         showToast('Inserted');
+        window.STLFeedback.usage({
+            event: 'insert', icon_key: entryKey(entry), icon_title: entryTitle(entry),
+            query: document.getElementById('searchInput').value.trim() || null
+        });
         if (!store.get('designerTipDismissed', false)) document.getElementById('designerTip').classList.remove('hidden');
     } catch (error) {
         console.error('Insert failed:', error);
@@ -952,49 +994,106 @@ function setSelectedData(data, options) {
     });
 }
 
-async function copyEntry(entry) {
-    try {
-        const png = await entryPng(entry);
-        const blob = await (await fetch('data:image/png;base64,' + png.base64)).blob();
-        await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-        rememberRecent(entry);
-        showToast('Copied - paste into your slide');
-    } catch (error) {
-        try {
-            await navigator.clipboard.writeText(buildSvg(entry, state.size));
-            showToast('Copied as SVG code');
-        } catch (e) {
-            console.error('Copy failed:', error, e);
-            if (isImage(entry)) {
-                showToast('Copy not allowed here - use PNG download', 'error');
-                return;
-            }
-            showToast('Copy not allowed here - use SVG or PNG download', 'error');
-        }
+// ---------- Feedback ----------
+
+const FEEDBACK_FORMS = {
+    request: {
+        title: 'Request an icon',
+        intro: 'Tell us the icon or logo you need and what it’s for. We’ll add it to STL Icons.',
+        placeholder: 'e.g. an icon for "network digital twin", or the Iliad logo'
+    },
+    no_results: {
+        title: 'Nothing suitable?',
+        intro: 'Tell us what you were looking for, so we can add it.',
+        placeholder: 'What did you need the icon to show?'
+    },
+    remove: {
+        title: 'Suggest removing this icon',
+        intro: 'Why should this icon go? For example: unclear, wrong, duplicate or off-brand.',
+        placeholder: 'Reason (optional)'
     }
+};
+let feedbackKind = null;
+
+function entryKey(entry) {
+    return entry ? `${entry.lib}:${entry.name}` : null;
 }
 
-async function downloadEntry(entry, format) {
-    try {
-        let blob;
-        if (format === 'svg') {
-            blob = new Blob([buildSvg(entry, state.size * 4 / 3)], { type: 'image/svg+xml' });
-        } else {
-            const png = await entryPng(entry);
-            blob = await (await fetch('data:image/png;base64,' + png.base64)).blob();
-        }
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = `stl-${entry.name}.${format}`;
-        document.body.appendChild(link);
-        link.click();
-        link.remove();
-        setTimeout(() => URL.revokeObjectURL(link.href), 1000);
-        rememberRecent(entry);
-    } catch (error) {
-        console.error('Download failed:', error);
-        showToast('Download failed', 'error');
+function entryTitle(entry) {
+    const icon = entry && getIcon(entry);
+    return icon ? (icon.title || icon.name) : null;
+}
+
+function openFeedback(kind) {
+    feedbackKind = kind;
+    const form = FEEDBACK_FORMS[kind];
+    const query = document.getElementById('searchInput').value.trim();
+    document.getElementById('feedbackTitle').textContent = form.title;
+    document.getElementById('feedbackIntro').textContent = kind === 'remove' && state.selected
+        ? `${entryTitle(state.selected)}: ${form.intro}` : form.intro;
+    const message = document.getElementById('feedbackMessage');
+    message.placeholder = form.placeholder;
+    message.value = kind === 'no_results' && query ? `I searched for "${query}" and needed: ` : '';
+    document.getElementById('feedbackName').value = store.get('feedbackName', '');
+    document.getElementById('feedbackDialog').classList.remove('hidden');
+    message.focus();
+}
+
+function closeFeedback() {
+    document.getElementById('feedbackDialog').classList.add('hidden');
+    feedbackKind = null;
+}
+
+async function submitFeedback() {
+    const message = document.getElementById('feedbackMessage').value.trim();
+    const name = document.getElementById('feedbackName').value.trim();
+    if (!message && feedbackKind !== 'remove') {
+        document.getElementById('feedbackMessage').focus();
+        return;
     }
+    store.set('feedbackName', name);
+    const row = {
+        kind: feedbackKind,
+        message: message || null,
+        name: name || null,
+        query: document.getElementById('searchInput').value.trim() || null,
+        icon_key: feedbackKind === 'remove' ? entryKey(state.selected) : null,
+        icon_title: feedbackKind === 'remove' ? entryTitle(state.selected) : null
+    };
+    closeFeedback();
+    const sent = await window.STLFeedback.feedback(row);
+    showToast(sent ? 'Thanks, sent' : 'Thanks, saved: it will be sent when the feedback service is connected');
+}
+
+/** Thumbs up/down: one vote per icon per person; voting the same way again takes it back. */
+async function vote(direction) {
+    const entry = state.selected;
+    if (!entry) return;
+    const key = entryKey(entry);
+    const votes = store.get('votes', {});
+    const undo = votes[key] === direction;
+    if (undo) delete votes[key]; else votes[key] = direction;
+    store.set('votes', votes);
+    renderDetail();
+    await window.STLFeedback.feedback({
+        kind: undo ? `undo_${direction}` : (direction === 'up' ? 'thumbs_up' : 'thumbs_down'),
+        icon_key: key,
+        icon_title: entryTitle(entry),
+        query: document.getElementById('searchInput').value.trim() || null
+    });
+    showToast(undo ? 'Vote removed' : (direction === 'up' ? 'Thanks: marked as a good icon' : 'Thanks: marked as not good'));
+}
+
+function showContextMenu(x, y) {
+    const menu = document.getElementById('contextMenu');
+    menu.classList.remove('hidden');
+    const { width, height } = menu.getBoundingClientRect();
+    menu.style.left = Math.min(x, window.innerWidth - width - 8) + 'px';
+    menu.style.top = Math.min(y, window.innerHeight - height - 8) + 'px';
+}
+
+function hideContextMenu() {
+    document.getElementById('contextMenu').classList.add('hidden');
 }
 
 // ---------- Utilities ----------

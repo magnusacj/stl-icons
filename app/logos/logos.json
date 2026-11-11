@@ -1,5 +1,32 @@
 [
  {
+  "name": "stl-partners",
+  "title": "STL Partners",
+  "file": "stl-partners.png",
+  "category": "STL Partners",
+  "tags": [
+   "STL Partners",
+   "stl",
+   "our logo",
+   "company logo"
+  ]
+ },
+ {
+  "name": "stl-partners-white",
+  "title": "STL Partners (white)",
+  "file": "stl-partners-white.png",
+  "category": "STL Partners",
+  "tags": [
+   "STL Partners",
+   "stl",
+   "our logo",
+   "white",
+   "reversed",
+   "dark background"
+  ],
+  "dark": true
+ },
+ {
   "name": "vodafone",
   "title": "Vodafone",
   "file": "vodafone.png",

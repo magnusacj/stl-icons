@@ -49,7 +49,7 @@ The root element carries the style once:
 | Corner radius | Large frames 1.5 to 3; small boxes 0.5 to 1 |
 | Smallest feature | 1.5 long (tick marks, pins). Anything smaller disappears at slide size |
 | Element count | As few as possible. If an icon needs more than about 12 parts, simplify the idea |
-| Text | No `<text>`. Letters (5G, 6G) are drawn as paths, about 6 tall and 4.5 wide |
+| Text | Only where the letters are the point (5G, 6G). Use the real **Roboto Bold** outlines as filled paths (`fill="currentColor" stroke="none"`), capitals 6 to 7 tall: at that size Roboto Bold's stems match the 1.5 stroke. Never `<text>` elements, which depend on the viewer's fonts. The generator is `text_icons.py` (see README) |
 | Hidden shapes | None. No invisible frames or placeholder rectangles: PowerPoint's Graphics Outline turns them into a visible box |
 
 ## 5. Shared motifs (reuse these instead of redrawing)

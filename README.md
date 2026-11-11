@@ -55,6 +55,21 @@ between separate lines, nothing outside 1 to 23, and the shared motifs (mast, si
 4. Run `python scripts/serve.py`, open http://localhost:3000/icon-lint.html and fix anything it flags
    (lines too close together, doubled lines, or drawing outside the safe area).
 
+## Feedback, requests and usage
+
+The panel has a **Request** button, a "Nothing suitable? Tell us" link under search results, and 👍 / 👎 / 🚩 buttons
+(also on right-click) for each icon. It also counts, anonymously, which icons are inserted and what people search for.
+Everything goes to a Supabase database:
+
+1. **One-time setup:** create a free project at supabase.com, open **SQL Editor**, paste `supabase/setup.sql` and run it.
+2. In Supabase **Project Settings → API**, copy the Project URL and the `anon` public key into `app/config.js`, then publish.
+3. In Supabase **Authentication → URL Configuration**, set the Site URL to `https://magnusacj.github.io/stl-icons/admin.html`.
+4. Read the results at **https://magnusacj.github.io/stl-icons/admin.html**. Sign in with an @stlpartners.com email
+   address (you are emailed a link).
+
+The public key can only add rows; reading needs an STL sign-in. Until step 2 is done, feedback waits on each PC and is
+sent automatically once the service is connected.
+
 ## Add a company logo
 
 1. Save the logo as a PNG (transparent background preferred) in `app/logos/`, e.g. `app/logos/acme-telecom.png`.

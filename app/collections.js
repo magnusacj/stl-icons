@@ -11,6 +11,19 @@
 
 window.STL_COLLECTIONS = [
     {
+        id: 'preferred',
+        name: 'STL preferred',
+        description: 'The house set: icons to reach for first in STL decks. Edit this list as thumbs-up feedback comes in',
+        icons: [
+            'stl:ran', 'stl:open-ran', 'stl:5g', 'stl:6g', 'stl:core-network', 'stl:network-slicing', 'stl:private-network',
+            'stl:fibre', 'stl:satellite-ntn', 'stl:operator', 'stl:network-api', 'stl:naas', 'stl:telco-cloud', 'stl:mec',
+            'stl:hyperscale-data-centre', 'stl:edge-data-centre', 'stl:colocation', 'stl:server-rack', 'stl:sovereign-cloud',
+            'stl:telco-ai', 'stl:generative-ai', 'stl:ai-agent', 'stl:ai-chip', 'stl:ai-factory', 'stl:network-security',
+            'stl:iot', 'stl:smart-factory', 'stl:b2b2x', 'stl:managed-service', 'stl:monetisation', 'stl:market-sizing',
+            'stl:roadmap', 'stl:partner-ecosystem', 'stl:net-zero', 'stl:infraco', 'stl:techco'
+        ]
+    },
+    {
         id: 'stl',
         name: 'STL originals',
         description: 'Icons drawn for STL topics that the open libraries do not cover',
