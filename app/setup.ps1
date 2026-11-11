@@ -116,24 +116,57 @@ else {
     Ok 'Installed'
 }
 
-Step 'Signing in to GitHub'
-Note 'A browser window will open. Sign in with the GitHub account that has access to magnusacj/stl-icons.'
-Do-It 'run GitHub sign-in' {
-    $env:PATH = (Split-Path $git) + ';' + $env:PATH
-    & $gh auth status 2>$null | Out-Null
-    if ($LASTEXITCODE -ne 0) { & $gh auth login --hostname github.com --git-protocol https --web }
-    & $gh auth setup-git
+# From here on we run git and gh, which print normal progress and status messages on stderr.
+# Windows PowerShell treats any stderr output as a fatal error under 'Stop', so check exit codes instead.
+$ErrorActionPreference = 'Continue'
+$env:PATH = (Split-Path $git) + ';' + $env:PATH
+
+function Invoke-Quiet([scriptblock]$command) {
+    # Run a native command, discarding all its output, and return whether it succeeded.
+    # Reset the exit code first so a command that could not even start is not mistaken for a success.
+    $global:LASTEXITCODE = 999
+    try { & $command *> $null } catch { return $false }
+    return ($global:LASTEXITCODE -eq 0)
 }
 
+Step 'Signing in to GitHub'
+if ($DryRun) { Write-Host '  [dry run] would run GitHub sign-in' -ForegroundColor DarkGray }
+elseif (Invoke-Quiet { & $gh auth status }) { Ok 'Already signed in' }
+else {
+    Note 'A browser window will open. Sign in with the GitHub account that has access to magnusacj/stl-icons.'
+    Note 'It shows a one-time code here first: copy it, press Enter, and paste it into the browser.'
+    & $gh auth login --hostname github.com --git-protocol https --web
+    if (-not (Invoke-Quiet { & $gh auth status })) {
+        Note 'GitHub sign-in did not finish. Run the setup line again to retry.'
+        return
+    }
+    Ok 'Signed in'
+}
+Do-It 'let Git use the GitHub sign-in' { $null = Invoke-Quiet { & $gh auth setup-git } }
+
 Step "Downloading the code to $CodeDir"
-if (Test-Path (Join-Path $CodeDir '.git')) { Ok 'Already downloaded. Getting the latest version.'; Do-It 'pull latest changes' { & $git -C $CodeDir pull } }
-else { Do-It "clone $RepoUrl" { & $git clone $RepoUrl $CodeDir } }
+if (Test-Path (Join-Path $CodeDir '.git')) {
+    Do-It 'get the latest changes' {
+        if (Invoke-Quiet { & $git -C $CodeDir pull }) { Ok 'Already downloaded; updated to the latest version' }
+        else { Note "Could not update the code in $CodeDir. Open it and run: git pull" }
+    }
+}
+else {
+    Do-It "clone $RepoUrl" {
+        if (Invoke-Quiet { & $git clone $RepoUrl $CodeDir }) { Ok 'Downloaded' }
+        else { Note 'Could not download the code. Check the GitHub sign-in and run the setup line again.'; return }
+    }
+}
+
+if (-not $DryRun -and -not (Test-Path (Join-Path $CodeDir '.git'))) { return }
 
 Do-It 'set the name and private GitHub email used on commits' {
-    $login = & $gh api user --jq .login
-    $id = & $gh api user --jq .id
-    & $git -C $CodeDir config user.name $login
-    & $git -C $CodeDir config user.email "$id+$login@users.noreply.github.com"
+    $login = & $gh api user --jq .login 2>$null
+    $id = & $gh api user --jq .id 2>$null
+    if ($login -and $id) {
+        & $git -C $CodeDir config user.name $login
+        & $git -C $CodeDir config user.email "$id+$login@users.noreply.github.com"
+    }
 }
 
 Write-Host ''
